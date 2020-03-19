@@ -94,11 +94,14 @@ class RaitingArticleController extends Controller
 
         $raitings = DB::select(
             "
-                select a.title as article , concat_ws(' ',c.last_name,c.mother_last_name,c.second_name,c.first_name) as cliente , ra.raiting as raiting , ca.comment as comentario
+                -- select a.title as article , concat_ws(' ',c.last_name,c.mother_last_name,c.second_name,c.first_name) as cliente , ra.raiting as raiting , ca.comment as comentario
+                
+                select ra.raiting as raiting , count(c.id) as cantidadCliente
                 from articles a join raiting_articles ra on a.id = ra.article_id
                      join clients c on ra.client_id = c.id
                      join commentary_articles ca on a.id = ca.article_id
                 where a.id = 1
+                group by raiting
                 order by ra.raiting desc
                 ;
             "

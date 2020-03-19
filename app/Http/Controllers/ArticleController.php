@@ -138,7 +138,7 @@ class ArticleController extends Controller
                      join process_orders po on so.process_order_id = po.id
                 where po.id = 4
                 and c.id = 1
-                group by od.article_id
+                group by ciudad,producto
                 order by cantidad desc;
 
             "
@@ -177,7 +177,7 @@ class ArticleController extends Controller
                      join process_orders po on so.process_order_id = po.id
                 where po.id = 4
                 and c.id = $city_id
-                group by od.article_id
+                group by ciudad, producto
                 order by cantidad desc;
 
             "
