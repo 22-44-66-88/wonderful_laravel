@@ -8,7 +8,7 @@
                     <ul class="list-group">
                         @foreach($cities as $city)
                             <li class="list-group-item">
-                                <a href="/reporte/ventas/{{$city->id}}/ciudades">{{$city->city}}</a>
+                                <a href="/reportes/ventas/{{$city->id}}/articulos_promedio_ventas_ciudades">{{$city->city}}</a>
                             </li>
                         @endforeach
                         <div class="card-link">{{$cities->links()}}</div>

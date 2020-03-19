@@ -1,7 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="63a9da84-2db9-48ac-b8ce-a203d9e936c7" name="Default Changelist" comment="" />
+    <list default="true" id="63a9da84-2db9-48ac-b8ce-a203d9e936c7" name="Default Changelist" comment="consulta 7 agregado , y nuevos cambios en los metodos de la consulta 6 y 9">
+      <change afterPath="$PROJECT_DIR$/resources/views/users/listaDeColaboradoresYLaCantidadeDeOrdenesDespachados.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/users/listaDeVerificadoresYSuCantidadDeOrdenEntregado.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ArticleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ArticleController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CityController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ClientController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ClientController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/OrderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/OrderController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/RaitingArticleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/RaitingArticleController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserStatusOrderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserStatusOrderController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/articles/promedioDeProductosMasVendidosPorCiudades.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/articles/promedioDeProductosMasVendidosPorCiudades.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/articles/promedioVentasPorCiudades.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/articles/raitingsYComentarios.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/articles/raitingsYComentariosArticulos.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/articles/raitingsYComentariosArticulos.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/menuAdmin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/menuAdmin.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -12,6 +29,14 @@
     <execution>
       <executable />
     </execution>
+  </component>
+  <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="playerblade &lt;evotar156@gmail.com&gt;" />
+      </list>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -115,6 +140,7 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1ZF9Ck40ZNtM0Y0v8iMBIcYOZTe" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -151,12 +177,18 @@
       <workItem from="1584453793250" duration="10404000" />
       <workItem from="1584478378405" duration="7967000" />
       <workItem from="1584500576428" duration="9107000" />
-      <workItem from="1584534081096" duration="3127000" />
+      <workItem from="1584534081096" duration="3726000" />
+      <workItem from="1584550124192" duration="7269000" />
+      <workItem from="1584624528025" duration="1822000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="consulta 7 agregado , y nuevos cambios en los metodos de la consulta 6 y 9" />
+    <option name="LAST_COMMIT_MESSAGE" value="consulta 7 agregado , y nuevos cambios en los metodos de la consulta 6 y 9" />
   </component>
   <component name="WindowStateProjectService">
     <state x="417" y="169" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1584429711368">
@@ -167,9 +199,17 @@
       <screen x="0" y="0" width="1366" height="732" />
     </state>
     <state x="441" y="0" width="484" height="736" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.732@0.0.1366.732" timestamp="1584426695767" />
-    <state x="362" y="193" key="com.intellij.ide.util.TipDialog" timestamp="1584534083243">
+    <state x="417" y="122" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1584626128783">
       <screen x="0" y="0" width="1366" height="732" />
     </state>
-    <state x="362" y="193" key="com.intellij.ide.util.TipDialog/0.0.1366.732@0.0.1366.732" timestamp="1584534083243" />
+    <state x="417" y="122" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.732@0.0.1366.732" timestamp="1584626128783" />
+    <state x="228" y="0" key="CommitChangelistDialog2" timestamp="1584626461935">
+      <screen x="0" y="0" width="1366" height="732" />
+    </state>
+    <state x="228" y="0" key="CommitChangelistDialog2/0.0.1366.732@0.0.1366.732" timestamp="1584626461935" />
+    <state x="362" y="193" key="com.intellij.ide.util.TipDialog" timestamp="1584624530486">
+      <screen x="0" y="0" width="1366" height="732" />
+    </state>
+    <state x="362" y="193" key="com.intellij.ide.util.TipDialog/0.0.1366.732@0.0.1366.732" timestamp="1584624530486" />
   </component>
 </project>

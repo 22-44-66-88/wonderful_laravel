@@ -16,7 +16,7 @@
                     <ul class="list-group">
                         @foreach($articles as $article)
                             <li class="list-group-item">
-                                <a href="/reportes/raitings/{{$article->id}}/comentarios">{{$article->title}}</a>
+                                <a href="/reportes/raitings/{{$article->id}}/raiting_comentarios_articulos">{{$article->title}}</a>
                             </li>
                         @endforeach
                         <div class="card-link">{{$articles->links()}}</div>
