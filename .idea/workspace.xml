@@ -2,19 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="63a9da84-2db9-48ac-b8ce-a203d9e936c7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/database/seeds/RolesTableSeeder.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/seeds/UserRoleTableSeeder.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/seeds/UserTableSeeder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/articles/comentariosDeLosClientesPorRaiting.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ArticleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ArticleController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CityController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ClientController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ClientController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/RaitingArticleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/RaitingArticleController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserStatusOrderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserStatusOrderController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/articles/raitingsYComentariosArticulos.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/articles/raitingsYComentariosArticulos.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -176,7 +168,7 @@
       <workItem from="1584500576428" duration="9107000" />
       <workItem from="1584534081096" duration="3726000" />
       <workItem from="1584550124192" duration="7269000" />
-      <workItem from="1584624528025" duration="21984000" />
+      <workItem from="1584624528025" duration="35771000" />
     </task>
     <task id="LOCAL-00001" summary="consulta 7 agregado , y nuevos cambios en los metodos de la consulta 6 y 9">
       <created>1584626492548</created>
@@ -199,7 +191,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584633398125</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="mejoras en el reporte 9">
+      <created>1584669336168</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1584669336168</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -208,7 +207,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="consulta 7 agregado , y nuevos cambios en los metodos de la consulta 6 y 9" />
     <MESSAGE value="Otras mejoras" />
-    <option name="LAST_COMMIT_MESSAGE" value="Otras mejoras" />
+    <MESSAGE value="mejoras en el reporte 9" />
+    <option name="LAST_COMMIT_MESSAGE" value="mejoras en el reporte 9" />
   </component>
   <component name="WindowStateProjectService">
     <state x="417" y="169" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1584429711368">
@@ -223,13 +223,17 @@
       <screen x="0" y="0" width="1366" height="732" />
     </state>
     <state x="417" y="122" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.732@0.0.1366.732" timestamp="1584626128783" />
-    <state x="228" y="0" width="918" height="736" key="CommitChangelistDialog2" timestamp="1584633398025">
+    <state x="228" y="0" width="918" height="732" key="CommitChangelistDialog2" timestamp="1584669335891">
       <screen x="0" y="0" width="1366" height="732" />
     </state>
-    <state x="228" y="0" width="918" height="736" key="CommitChangelistDialog2/0.0.1366.732@0.0.1366.732" timestamp="1584633398025" />
+    <state x="228" y="0" width="918" height="732" key="CommitChangelistDialog2/0.0.1366.732@0.0.1366.732" timestamp="1584669335891" />
     <state x="362" y="193" key="com.intellij.ide.util.TipDialog" timestamp="1584624530486">
       <screen x="0" y="0" width="1366" height="732" />
     </state>
     <state x="362" y="193" key="com.intellij.ide.util.TipDialog/0.0.1366.732@0.0.1366.732" timestamp="1584624530486" />
+    <state x="347" y="160" key="run.anything.popup" timestamp="1584675209740">
+      <screen x="0" y="0" width="1366" height="732" />
+    </state>
+    <state x="347" y="160" key="run.anything.popup/0.0.1366.732@0.0.1366.732" timestamp="1584675209740" />
   </component>
 </project>

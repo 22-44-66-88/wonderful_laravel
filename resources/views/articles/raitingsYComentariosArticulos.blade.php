@@ -39,29 +39,46 @@
                             </thead>
                             @foreach($raitings as $raiting)
                                 <tbody>
-                                <tr>@if($raiting->raiting == 5)
-{{--                                        <td><img src="{{asset('/stars/5stars.jpg')}}" style="width: 110px;height: 19px;"></td>--}}
-                                        <td>
-                                            <a href="/reports">
-                                                <img src="{{asset('/stars/5stars.jpg')}}" style="width: 110px;height: 19px;">
-                                            </a>
-                                        </td>
-                                    @endif
-                                    @if($raiting->raiting == 4)
-                                        <td><img src="{{asset('/stars/4stars.jpg')}}" style="width: 110px;height: 19px;"></td>
-                                    @endif
-                                    @if($raiting->raiting == 3)
-                                        <td><img src="{{asset('/stars/3stars.jpg')}}" style="width: 110px;height: 19px;"></td>
-                                    @endif
-                                    @if($raiting->raiting == 2)
-                                        <td><img src="{{asset('/stars/2stars.jpg')}}" style="width: 110px;height: 19px;"></td>
-                                    @endif
-                                    @if($raiting->raiting == 1)
-                                        <td><img src="{{asset('/stars/1stars.jpg')}}" style="width: 110px;height: 19px;"></td>
-                                    @endif
-                                    <td>{{$raiting->cantidadCliente}}</td>
-                                    <td>{{$raiting->porcentaje}}</td>
-                                </tr>
+                                    <tr>
+                                        @if($raiting->raiting == 5)
+                                            {{--                                        <td><img src="{{asset('/stars/5stars.jpg')}}" style="width: 110px;height: 19px;"></td>--}}
+                                            <td>
+                                                <a href="/reportes/raiting/{{$raiting->article}}/{{$raiting->raiting}}/comentarios">
+                                                    <img src="{{asset('/stars/5stars.jpg')}}" style="width: 110px;height: 19px;">
+                                                </a>
+                                            </td>
+                                        @endif
+                                        @if($raiting->raiting == 4)
+                                            <td>
+                                                <a href="/reportes/raiting/{{$raiting->article}}/{{$raiting->raiting}}/comentarios">
+                                                    <img src="{{asset('/stars/4stars.jpg')}}" style="width: 110px;height: 19px;">
+                                                </a>
+                                            </td>
+                                        @endif
+                                        @if($raiting->raiting == 3)
+                                            <td>
+                                                <a href="/reportes/raiting/{{$raiting->article}}/{{$raiting->raiting}}/comentarios">
+                                                    <img src="{{asset('/stars/3stars.jpg')}}" style="width: 110px;height: 19px;">
+                                                </a>
+                                            </td>
+                                        @endif
+                                        @if($raiting->raiting == 2)
+                                            <td>
+                                                <a href="/reportes/raiting/{{$raiting->article}}/{{$raiting->raiting}}/comentarios">
+                                                    <img src="{{asset('/stars/2stars.jpg')}}" style="width: 110px;height: 19px;">
+                                                </a>
+                                            </td>
+                                        @endif
+                                        @if($raiting->raiting == 1)
+                                            <td>
+                                                <a href="/reportes/raiting/{{$raiting->article}}/{{$raiting->raiting}}/comentarios">
+                                                    <img src="{{asset('/stars/1stars.jpg')}}" style="width: 110px;height: 19px;">
+                                                </a>
+                                            </td>
+                                        @endif
+                                        <td>{{$raiting->cantidadCliente}}</td>
+                                        <td>{{$raiting->porcentaje}} %</td>
+                                    </tr>
                                 </tbody>
                             @endforeach
                         </table>

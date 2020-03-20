@@ -47,5 +47,6 @@ Route::group(['middleware' => 'auth'], function () {
 
 //    consulta 9
     Route::get('/reportes/raitings/{article_id}/raiting_comentarios_articulos', 'RaitingArticleController@raitingsYComentariosArticulos')->name('raiting_comentarios_articulos');
-
+//          consulta 9.1 comentarios seung el raiting (segun las evaluaciones de acuerdo a las estrellas)
+            Route::get('/reportes/raiting/{article}/{raiting}/comentarios', 'RaitingArticleController@comentariosDeLosClientesPorRaiting')->name('comentarios');
 });
