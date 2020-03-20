@@ -4,8 +4,6 @@ namespace App\Http\Controllers;
 
 use App\UserStatusOrder;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-use App\User;
 
 class UserStatusOrderController extends Controller
 {
@@ -83,32 +81,5 @@ class UserStatusOrderController extends Controller
     public function destroy(UserStatusOrder $userStatusOrder)
     {
         //
-    }
-
-    public function listaDeVerificadoresYSuCantidadDeOrdenEntregado( Request $request, User $users)
-    {
-//        concat_ws(' ',c.last_name,mother_last_name,c.first_name,c.second_name)as cliente
-        $request->user()->authorizeRole(['adminstrador']);
-        $users = DB::select(
-            "select concat_ws(' ',u.last_name,u.mother_last_name,u.first_name,u.second_name) as verificadores, 
-            COUNT(o.id) as cantidadEntregado
-            FROM roles r INNER JOIN role_user ru 
-            ON r.id = ru.role_id
-            INNER JOIN users u
-            ON ru.user_id = u.id
-            AND r.role = 'verificador'
-            INNER JOIN user_status_orders ue
-            ON u.id = ue.user_id 
-            INNER JOIN status_orders eo 
-            ON ue.status_order_id = eo.id
-            INNER JOIN process_orders p
-            ON eo.process_order_id = p.id
-            AND p.process_order = 'delivered'
-            INNER JOIN orders o 
-            on eo.order_id = o.id
-            GROUP BY verificadores;"
-        );
-    //    dd($users);
-        return view('users.listaDeVerificadoresYSuCantidadDeOrdenEntregado',compact('users'));
     }
 }

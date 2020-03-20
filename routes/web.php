@@ -41,9 +41,6 @@ Route::group(['middleware' => 'auth'], function () {
 //    sub rutas para la consulta  6 para listar por categorias
            Route::get('/reporte/ventas/{city_id}/ciudades','ArticleController@promedioVentasPorCiudades_6')->name('ventas');
 
-//    consulta 8
-Route::get('/reportes/usuarios_verificadores' , 'UserStatusOrderController@listaDeVerificadoresYSuCantidadDeOrdenEntregado')->name('usuarios_verificadores');
-
 //    consulta 9
     Route::get('/reportes/raiting_comentarios_articulos', 'RaitingArticleController@raitingsYComentariosArticulos')->name('raiting_comentarios_articulos');
 //    sub rutas para la consulta  9 para listar por articulos los raiting y los comentarios

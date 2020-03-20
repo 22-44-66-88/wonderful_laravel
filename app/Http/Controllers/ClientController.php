@@ -99,9 +99,9 @@ class ClientController extends Controller
                  join process_orders po on eo.process_order_id = po.id
                  join price_articles pa on a.id = pa.article_id
                  join clients c on o.client_id = c.id
-            where eo.id = 4
-            -- and year(o.created_at) = 2019
-            group by anio, cliente
+            -- where eo.id = 4
+            and year(o.created_at) = 2015
+            group by o.id
             order by cantidadProducto desc;"
         );
 //        dd($clients);

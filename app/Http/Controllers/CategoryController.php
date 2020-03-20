@@ -101,7 +101,7 @@ class CategoryController extends Controller
                      join process_orders po on eo.process_order_id = po.id
                 WHERE eo.process_order_id = 4
                 and o.created_at between '2010-01-01 00:41:05' and '2020-8-12 13:20:34'
-                group by departamentos
+                group by c.id
                 order by cantidadVentas desc;
             "
         );
@@ -125,7 +125,7 @@ class CategoryController extends Controller
                      join process_orders po on so.process_order_id = po.id
                 where so.process_order_id = 4
                 and c.id = 3
-                group by departamento,producto
+                group by a.id
                 order by cantidad desc;
             "
         );
@@ -148,7 +148,7 @@ class CategoryController extends Controller
                 where so.process_order_id = 4
                 -- and c.id = 3
                 -- group by a.id
-                group by departamento
+                group by c.id
                 order by cantidad desc;
             "
         );
