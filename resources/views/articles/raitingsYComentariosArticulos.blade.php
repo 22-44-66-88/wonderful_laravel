@@ -26,20 +26,26 @@
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-header">
-                        <label class="float-left">Producto : {{$articles[0]->title}}</label>
+                        <label class="float-left">Producto : {{$raitings[0]->article}}</label>
                     </div>
                     <div class="card-body">
                         <table class="table border table-responsive-sm">
                             <thead class="card-header">
                             <tr class="text-dark">
                                 <th>Raiting</th>
-                                <th>Comentario</th>
+                                <th>Cantidad De Clientes</th>
+                                <th>Porcentaje</th>
                             </tr>
                             </thead>
                             @foreach($raitings as $raiting)
                                 <tbody>
                                 <tr>@if($raiting->raiting == 5)
-                                        <td><img src="{{asset('/stars/5stars.jpg')}}" style="width: 110px;height: 19px;"></td>
+{{--                                        <td><img src="{{asset('/stars/5stars.jpg')}}" style="width: 110px;height: 19px;"></td>--}}
+                                        <td>
+                                            <a href="/reports">
+                                                <img src="{{asset('/stars/5stars.jpg')}}" style="width: 110px;height: 19px;">
+                                            </a>
+                                        </td>
                                     @endif
                                     @if($raiting->raiting == 4)
                                         <td><img src="{{asset('/stars/4stars.jpg')}}" style="width: 110px;height: 19px;"></td>
@@ -54,6 +60,7 @@
                                         <td><img src="{{asset('/stars/1stars.jpg')}}" style="width: 110px;height: 19px;"></td>
                                     @endif
                                     <td>{{$raiting->cantidadCliente}}</td>
+                                    <td>{{$raiting->porcentaje}}</td>
                                 </tr>
                                 </tbody>
                             @endforeach

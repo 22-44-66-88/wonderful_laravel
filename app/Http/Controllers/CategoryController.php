@@ -88,7 +88,7 @@ class CategoryController extends Controller
 //dev sara
     public function productosVendidosPorDepartamento(Request $request, Category $categories){
 //        departamento = category
-        $request->user()->authorizeRole(['adminstrador']);
+        $request->user()->authorizeRole(['administrador']);
 
         $categories = DB::select(
             "
@@ -112,7 +112,7 @@ class CategoryController extends Controller
 //    dev sara
     public function promedioDeventasPorDepartamento(Request $request, Category $categories_promedios){
 //        departamento = category
-        $request->user()->authorizeRole(['adminstrador']);
+        $request->user()->authorizeRole(['administrador']);
 
         $categories_promedios = DB::select(
             "
@@ -124,7 +124,7 @@ class CategoryController extends Controller
                      join status_orders so on o.id = so.order_id
                      join process_orders po on so.process_order_id = po.id
                 where so.process_order_id = 4
-                and c.id = 3
+                -- and c.id = 3
                 group by departamento,producto
                 order by cantidad desc;
             "
@@ -134,7 +134,7 @@ class CategoryController extends Controller
     }
 
     function promedioDeventasPorDepartamentoBarChart(Request $request, Category $categories_promedios){
-        $request->user()->authorizeRole(['adminstrador']);
+        $request->user()->authorizeRole(['administrador']);
 
         $categories_promedios = DB::select(
             "

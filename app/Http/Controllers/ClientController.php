@@ -86,7 +86,7 @@ class ClientController extends Controller
 
     public function cantidadDeProductosPorCliente_2( Request $request, Client $clients)
     {
-        $request->user()->authorizeRole(['adminstrador']);
+        $request->user()->authorizeRole(['administrador']);
 
         $clients = DB::select(
             "select concat_ws(' ',c.last_name,c.mother_last_name,c.first_name,c.second_name) as cliente,
@@ -100,7 +100,7 @@ class ClientController extends Controller
                  join price_articles pa on a.id = pa.article_id
                  join clients c on o.client_id = c.id
             where eo.id = 4
-            -- and year(o.created_at) = 2019
+            -- and year(o.created_at) = 2014
             group by anio, cliente
             order by cantidadProducto desc;"
         );

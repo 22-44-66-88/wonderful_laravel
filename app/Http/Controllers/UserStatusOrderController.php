@@ -87,7 +87,7 @@ class UserStatusOrderController extends Controller
 
 //    consulta 7
     public function listaDeColaboradoresYLaCantidadeDeOrdenesDespachados(User $users , Request $request){
-        $request->user()->authorizeRole(['adminstrador']);
+        $request->user()->authorizeRole(['administrador']);
         $users = DB::select(
             "
                 select concat_ws(' ' ,u.last_name,u.mother_last_name,u.first_name,u.second_name) as colaborador , count(so.order_id) as cantidadDespachado
@@ -112,7 +112,7 @@ class UserStatusOrderController extends Controller
     public function listaDeVerificadoresYSuCantidadDeOrdenEntregado( Request $request, User $users)
     {
 //        concat_ws(' ',c.last_name,mother_last_name,c.first_name,c.second_name)as cliente
-        $request->user()->authorizeRole(['adminstrador']);
+        $request->user()->authorizeRole(['administrador']);
         $users = DB::select(
             "select concat_ws(' ',u.last_name,u.mother_last_name,u.first_name,u.second_name) as verificadores,
             COUNT(o.id) as cantidadEntregado

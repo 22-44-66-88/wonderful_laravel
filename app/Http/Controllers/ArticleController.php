@@ -88,7 +88,7 @@ class ArticleController extends Controller
     public function articulosVendidosPorMes( Request $request, Article $articles)
     {
 //        concat_ws(' ',c.last_name,mother_last_name,c.first_name,c.second_name)as cliente
-        $request->user()->authorizeRole(['adminstrador']);
+        $request->user()->authorizeRole(['administrador']);
         $articles = DB::select(
             "select a.title as producto , dt.quantity as cantidad,
                         CASE MONTH(o.created_at)
@@ -123,13 +123,13 @@ class ArticleController extends Controller
 
     public function promedioDeProductosMasVendidosPorCiudades($city_id, Article $articles , Request $request){
 
-        $request->user()->authorizeRole(['adminstrador']);
+        $request->user()->authorizeRole(['administrador']);
 
         $cities = DB::table('cities')->select('*')->paginate(3);
 //        dd($cities);
         $articles = DB::select(
             "
-                select c.city as ciudad ,  a.title as producto , count(od.article_id) as cantidad, avg(od.sub_total) as totalVenta
+                select c.city as ciudad ,  a.title as producto , count(od.article_id) as cantidad , avg(od.sub_total) as totalVenta
                 from articles a join order_details od on a.id = od.article_id
                      join orders o on od.order_id = o.id
                      join transport_fares tf on o.transport_fares_id = tf.id
@@ -139,7 +139,7 @@ class ArticleController extends Controller
                 where po.id = 4
                 and c.id = $city_id
                 group by ciudad,producto
-                order by cantidad desc;
+                order by totalVenta desc;
 
             "
         );

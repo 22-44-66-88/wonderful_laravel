@@ -85,7 +85,7 @@ class CityController extends Controller
         //
     }
     public function promedioVentasPorCiudades(Request $request , City $cities){
-        $request->user()->authorizeRole(['adminstrador']);
+        $request->user()->authorizeRole(['administrador']);
 
         $cities  = DB::select(
             "

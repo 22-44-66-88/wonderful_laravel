@@ -28,7 +28,7 @@ class HomeController extends Controller
 //        $request->user()->authorizeRole('adminstrador');
         $user = Auth::user();
 //        return view('home');
-        if ($request->user()->authorizeRole(['adminstrador'])) {
+        if ($request->user()->authorizeRole(['administrador'])) {
             return view('homeAdmin',compact('user'));
         }
         if ($request->user()->authorizeRole(['colaborador'])) {
