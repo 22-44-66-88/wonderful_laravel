@@ -41,7 +41,10 @@
                         <a href="/reportes/clientes" class="btn btn-outline-secondary btn-sm dropdown" tabindex="-1" role="button" aria-disabled="true">2.- Clientes que mas compraron por anio</a>
                         <a href="reportes/categorias" class="btn btn-outline-secondary btn-sm dropdown" tabindex="-1" role="button" aria-disabled="true">3.- Cantidad de ventas por departamento</a>
                         <a href="/reportes/categories_promedio" class="btn btn-outline-secondary btn-sm dropdown" tabindex="-1" role="button" aria-disabled="true">4.- Promedio de productos vendidos por departamento</a>
-                        <a href="/reportes/raiting_comentarios_articulos" class="btn btn-outline-secondary btn-sm dropdown" tabindex="-1" role="button" aria-disabled="true">9.- Raiting y comentarios de los productos</a>
+                        <a href="/reportes/colaboradores/ordenes_despachados" class="btn btn-outline-secondary btn-sm dropdown" tabindex="-1" role="button" aria-disabled="true">7.- Lista de colaboradores y ordenes que despacharon</a>
+                        <a href="/reportes/usuarios_verificadores" class="btn btn-outline-secondary btn-sm dropdown" tabindex="-1" role="button" aria-disabled="true">8.- Lista de verificadores con sus cantidades de ordenes entregados</a>
+                        <a href="/reportes/raitings/{{1}}/raiting_comentarios_articulos" class="btn btn-outline-secondary btn-sm dropdown" tabindex="-1" role="button" aria-disabled="true">9.- Raiting y comentarios de los productos</a>
+
                         {{--                        dev wonderful--}}
                         {{--                        <a href="/testChart" class="btn btn-outline-primary btn-sm dropdown" tabindex="-1" role="button" aria-disabled="true">Test Chart</a>--}}
                     </div>
@@ -58,7 +61,7 @@
                     <div class="dropdown-menu dropdown-menu-left" aria-labelledby="navbarDropdown">
                         <a href="/reportes/categories_promedio_chart" class="btn btn-outline-secondary btn-sm dropdown" tabindex="-1" role="button" aria-disabled="true">4.- Promedio de productos vendidos por departamento</a>
                         <a href="/reportes/ventas_ciudades" class="btn btn-outline-secondary btn-sm dropdown" tabindex="-1" role="button" aria-disabled="true">5.- Promedio de ventas por ciudad</a>
-                        <a href="/reportes/articulos_promedio_ventas_ciudades" class="btn btn-outline-secondary btn-sm dropdown" tabindex="-1" role="button" aria-disabled="true">6.- Promedio de productos por ciudades</a>
+                        <a href="/reportes/ventas/{{1}}/articulos_promedio_ventas_ciudades" class="btn btn-outline-secondary btn-sm dropdown" tabindex="-1" role="button" aria-disabled="true">6.- Promedio de productos por ciudades</a>
                     </div>
                 </li>
             </ul>

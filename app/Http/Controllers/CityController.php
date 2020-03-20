@@ -101,7 +101,7 @@ class CityController extends Controller
                     join articles a on do.article_id = a.id
                     join process_orders po on eo.process_order_id = po.id
                 where po.id = 4
-                GROUP BY c.id;
+                GROUP BY ciudad;
             "
         );
 

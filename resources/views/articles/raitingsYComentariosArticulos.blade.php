@@ -16,7 +16,7 @@
                     <ul class="list-group">
                         @foreach($articles as $article)
                             <li class="list-group-item">
-                                <a href="/reportes/raitings/{{$article->id}}/comentarios">{{$article->title}}</a>
+                                <a href="/reportes/raitings/{{$article->id}}/raiting_comentarios_articulos">{{$article->title}}</a>
                             </li>
                         @endforeach
                         <div class="card-link">{{$articles->links()}}</div>
@@ -26,25 +26,19 @@
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-header">
-{{--                        Raiting y comentarios de los productos--}}
-                        <label class="float-left">Producto : {{$raitings[0]->article}}</label>
+                        <label class="float-left">Producto : {{$articles[0]->title}}</label>
                     </div>
                     <div class="card-body">
                         <table class="table border table-responsive-sm">
                             <thead class="card-header">
                             <tr class="text-dark">
-{{--                                <th>Producto</th>--}}
-{{--                                <th>Cliente</th>--}}
                                 <th>Raiting</th>
                                 <th>Comentario</th>
                             </tr>
                             </thead>
                             @foreach($raitings as $raiting)
                                 <tbody>
-                                <tr>
-{{--                                    <td>{{$article->producto}}</td>--}}
-{{--                                    <td>{{$raiting->cliente}}</td>--}}
-                                    @if($raiting->raiting == 5)
+                                <tr>@if($raiting->raiting == 5)
                                         <td><img src="{{asset('/stars/5stars.jpg')}}" style="width: 110px;height: 19px;"></td>
                                     @endif
                                     @if($raiting->raiting == 4)
@@ -59,8 +53,7 @@
                                     @if($raiting->raiting == 1)
                                         <td><img src="{{asset('/stars/1stars.jpg')}}" style="width: 110px;height: 19px;"></td>
                                     @endif
-{{--                                    <td>{{$raiting->raiting}}</td>--}}
-                                    <td>{{$raiting->comentario}}</td>
+                                    <td>{{$raiting->cantidadCliente}}</td>
                                 </tr>
                                 </tbody>
                             @endforeach

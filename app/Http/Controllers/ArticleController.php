@@ -121,7 +121,7 @@ class ArticleController extends Controller
         return view('articles.articulosVendidosPorMes',compact('articles'));
     }
 
-    public function promedioDeProductosMasVendidosPorCiudades(Article $articles , Request $request){
+    public function promedioDeProductosMasVendidosPorCiudades($city_id, Article $articles , Request $request){
 
         $request->user()->authorizeRole(['adminstrador']);
 
@@ -137,8 +137,8 @@ class ArticleController extends Controller
                      join status_orders so on o.id = so.order_id
                      join process_orders po on so.process_order_id = po.id
                 where po.id = 4
-                and c.id = 1
-                group by od.article_id
+                and c.id = $city_id
+                group by ciudad,producto
                 order by cantidad desc;
 
             "
@@ -155,43 +155,5 @@ class ArticleController extends Controller
         // return view('articles.promedioDeProductosMasVendidosPorCiudades',compact('barchart','articles','cities'));
         return view('articles.promedioDeProductosMasVendidosPorCiudades',compact('barchart','articles','cities'));
     }
-//consulta 6
-    public function promedioVentasPorCiudades_6($city_id, City $cities, Request $request){
-        $request->user()->authorizeRole(['adminstrador']);
 
-//        $cities = DB::select(
-//            "
-//                select c.id , c.city from cities c;
-//            "
-//        );
-        $cities = DB::table('cities')->select('*')->paginate(3);
-//        dd($cities);
-        $articles = DB::select(
-            "
-                select c.city as ciudad ,  a.title as producto , count(od.article_id) as cantidad, avg(od.sub_total) as totalVenta
-                from articles a join order_details od on a.id = od.article_id
-                     join orders o on od.order_id = o.id
-                     join transport_fares tf on o.transport_fares_id = tf.id
-                     join cities c on tf.city_id = c.id
-                     join status_orders so on o.id = so.order_id
-                     join process_orders po on so.process_order_id = po.id
-                where po.id = 4
-                and c.id = $city_id
-                group by od.article_id
-                order by cantidad desc;
-
-            "
-        );
-
-//        dd($articles);
-        $barchart = new BarChart();
-
-        foreach ($articles as $article){
-            $barchart->dataset(
-                $article->producto,'bar',[$article->totalVenta]
-            );
-        }
-
-        return view('articles.promedioVentasPorCiudades',compact('barchart','cities','articles'));
-    }
 }

@@ -37,13 +37,15 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/reportes/ventas_ciudades', 'CityController@promedioVentasPorCiudades')->name('ventas_ciudades');
 
 //    consulta 6
-    Route::get('/reportes/articulos_promedio_ventas_ciudades', 'ArticleController@promedioDeProductosMasVendidosPorCiudades')->name('articulos_promedio_ventas_ciudades');
-//    sub rutas para la consulta  6 para listar por categorias
-           Route::get('/reporte/ventas/{city_id}/ciudades','ArticleController@promedioVentasPorCiudades_6')->name('ventas');
+    Route::get('/reportes/ventas/{city_id}/articulos_promedio_ventas_ciudades', 'ArticleController@promedioDeProductosMasVendidosPorCiudades')->name('articulos_promedio_ventas_ciudades');
+
+//    consulta 7
+    Route::get('/reportes/colaboradores/ordenes_despachados', 'UserStatusOrderController@listaDeColaboradoresYLaCantidadeDeOrdenesDespachados')->name('ordenes_despachados');
+
+//    consulta 8
+    Route::get('/reportes/usuarios_verificadores' , 'UserStatusOrderController@listaDeVerificadoresYSuCantidadDeOrdenEntregado')->name('usuarios_verificadores');
 
 //    consulta 9
-    Route::get('/reportes/raiting_comentarios_articulos', 'RaitingArticleController@raitingsYComentariosArticulos')->name('raiting_comentarios_articulos');
-//    sub rutas para la consulta  9 para listar por articulos los raiting y los comentarios
-           Route::get('/reportes/raitings/{article_id}/comentarios', 'RaitingArticleController@raitingsYComentarios')->name('comentarios');
+    Route::get('/reportes/raitings/{article_id}/raiting_comentarios_articulos', 'RaitingArticleController@raitingsYComentariosArticulos')->name('raiting_comentarios_articulos');
 
 });
