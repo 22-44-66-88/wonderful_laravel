@@ -6,8 +6,8 @@
                 <div class="card">
                     <div class="card-header">Promedio de ventas por departamentos
                         <select name="" id="" class="float-right">
-                            @foreach($categories_promedios as $categories_promedio)
-                                <option value="">{{$categories_promedio->departamento}}</option>
+                            @foreach($categorias as $categoria)
+                                <option value="">{{$categoria->departamento}}</option>
                             @endforeach
                         </select>
                     </div>
@@ -22,13 +22,13 @@
                                 {{--                                <th>Anio</th>--}}
                             </tr>
                             </thead>
-                            @foreach($categories_promedios as $categories_promedio)
+                            @foreach($categorias as $categoria)
                                 <tbody>
                                 <tr>
-                                    <td>{{$categories_promedio->departamento}}</td>
-                                    <td>{{$categories_promedio->producto}}</td>
-                                    <td>{{$categories_promedio->cantidad}}</td>
-                                    <td>{{$categories_promedio->totalVenta}}</td>
+                                    <td>{{$categoria->departamento}}</td>
+                                    <td>{{$categoria->producto}}</td>
+                                    <td>{{$categoria->cantidad}}</td>
+                                    <td>{{$categoria->totalVenta}}</td>
                                     {{--                                    <td>{{$client->anio}}</td>--}}
                                 </tr>
                                 </tbody>

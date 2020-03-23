@@ -2,10 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="63a9da84-2db9-48ac-b8ce-a203d9e936c7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/articles/comentariosDeLosClientesPorRaiting.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/clients/detalleDeOrdenesPorCliente.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/layouts/menuAdminBackup.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ArticleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ArticleController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CityController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ClientController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ClientController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/OrderDetailController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/OrderDetailController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/RaitingArticleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/RaitingArticleController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/articles/raitingsYComentariosArticulos.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/articles/raitingsYComentariosArticulos.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserStatusOrderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserStatusOrderController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/articles/comentariosDeLosClientesPorRaiting.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/articles/comentariosDeLosClientesPorRaiting.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/categories/promedioDeventasPorDepartamento.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/categories/promedioDeventasPorDepartamento.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/menuAdmin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/menuAdmin.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -168,7 +179,11 @@
       <workItem from="1584500576428" duration="9107000" />
       <workItem from="1584534081096" duration="3726000" />
       <workItem from="1584550124192" duration="7269000" />
-      <workItem from="1584624528025" duration="35771000" />
+      <workItem from="1584624528025" duration="35966000" />
+      <workItem from="1584713004723" duration="2504000" />
+      <workItem from="1584744237702" duration="65000" />
+      <workItem from="1584820088300" duration="19256000" />
+      <workItem from="1584887013217" duration="12897000" />
     </task>
     <task id="LOCAL-00001" summary="consulta 7 agregado , y nuevos cambios en los metodos de la consulta 6 y 9">
       <created>1584626492548</created>
@@ -198,7 +213,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584669336168</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="mejoras en el reporte 9 con las estrellas para no volver atrar cada vez">
+      <created>1584683240162</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1584683240162</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -208,7 +230,8 @@
     <MESSAGE value="consulta 7 agregado , y nuevos cambios en los metodos de la consulta 6 y 9" />
     <MESSAGE value="Otras mejoras" />
     <MESSAGE value="mejoras en el reporte 9" />
-    <option name="LAST_COMMIT_MESSAGE" value="mejoras en el reporte 9" />
+    <MESSAGE value="mejoras en el reporte 9 con las estrellas para no volver atrar cada vez" />
+    <option name="LAST_COMMIT_MESSAGE" value="mejoras en el reporte 9 con las estrellas para no volver atrar cada vez" />
   </component>
   <component name="WindowStateProjectService">
     <state x="417" y="169" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1584429711368">
@@ -223,14 +246,26 @@
       <screen x="0" y="0" width="1366" height="732" />
     </state>
     <state x="417" y="122" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.732@0.0.1366.732" timestamp="1584626128783" />
-    <state x="228" y="0" width="918" height="732" key="CommitChangelistDialog2" timestamp="1584669335891">
+    <state x="346" y="19" width="687" height="694" key="#phpunit.xml" timestamp="1584842301502">
       <screen x="0" y="0" width="1366" height="732" />
     </state>
-    <state x="228" y="0" width="918" height="732" key="CommitChangelistDialog2/0.0.1366.732@0.0.1366.732" timestamp="1584669335891" />
-    <state x="362" y="193" key="com.intellij.ide.util.TipDialog" timestamp="1584624530486">
+    <state x="346" y="19" width="687" height="694" key="#phpunit.xml/0.0.1366.732@0.0.1366.732" timestamp="1584842301502" />
+    <state x="228" y="0" width="918" height="736" key="CommitChangelistDialog2" timestamp="1584683239918">
       <screen x="0" y="0" width="1366" height="732" />
     </state>
-    <state x="362" y="193" key="com.intellij.ide.util.TipDialog/0.0.1366.732@0.0.1366.732" timestamp="1584624530486" />
+    <state x="228" y="0" width="918" height="736" key="CommitChangelistDialog2/0.0.1366.732@0.0.1366.732" timestamp="1584683239918" />
+    <state x="467" y="122" key="FileChooserDialogImpl" timestamp="1584744298748">
+      <screen x="0" y="0" width="1366" height="732" />
+    </state>
+    <state x="467" y="122" key="FileChooserDialogImpl/0.0.1366.732@0.0.1366.732" timestamp="1584744298748" />
+    <state x="362" y="193" key="com.intellij.ide.util.TipDialog" timestamp="1584887018989">
+      <screen x="0" y="0" width="1366" height="732" />
+    </state>
+    <state x="362" y="193" key="com.intellij.ide.util.TipDialog/0.0.1366.732@0.0.1366.732" timestamp="1584887018989" />
+    <state x="348" y="25" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1584824905040">
+      <screen x="0" y="0" width="1366" height="732" />
+    </state>
+    <state x="348" y="25" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1366.732@0.0.1366.732" timestamp="1584824905040" />
     <state x="347" y="160" key="run.anything.popup" timestamp="1584675209740">
       <screen x="0" y="0" width="1366" height="732" />
     </state>

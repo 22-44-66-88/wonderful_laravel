@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,7 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    // return view('welcome');
+    return view('welcomeAdmin');
 });
 
 Auth::routes();
@@ -49,4 +50,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/reportes/raitings/{article_id}/raiting_comentarios_articulos', 'RaitingArticleController@raitingsYComentariosArticulos')->name('raiting_comentarios_articulos');
 //          consulta 9.1 comentarios seung el raiting (segun las evaluaciones de acuerdo a las estrellas)
             Route::get('/reportes/raiting/{article}/{raiting}/comentarios', 'RaitingArticleController@comentariosDeLosClientesPorRaiting')->name('comentarios');
+
+//    consulta 10
+    Route::get('/reportes/detalle_ordenes_por_cliente' , 'OrderDetailController@detalleDeOrdenesPorCliente')->name('articulos');
 });

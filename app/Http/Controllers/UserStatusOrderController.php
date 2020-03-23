@@ -87,9 +87,9 @@ class UserStatusOrderController extends Controller
 
 //    consulta 7
     public function listaDeColaboradoresYLaCantidadeDeOrdenesDespachados(User $users , Request $request){
-        $request->user()->authorizeRole(['administrador']);
-        $users = DB::select(
-            "
+        if ($request->user()->authorizeRole(['administrador'])) {
+            $users = DB::select(
+                "
                 select concat_ws(' ' ,u.last_name,u.mother_last_name,u.first_name,u.second_name) as colaborador , count(so.order_id) as cantidadDespachado
                 from roles r join role_user ru on r.id = ru.role_id
                     join users u on ru.user_id = u.id
@@ -103,18 +103,21 @@ class UserStatusOrderController extends Controller
                     join orders o on so.order_id = o.id
                 group by u.id;
             "
-        );
+            );
 
-        return view('users.listaDeColaboradoresYLaCantidadeDeOrdenesDespachados',compact('users'));
+            return view('users.listaDeColaboradoresYLaCantidadeDeOrdenesDespachados',compact('users'));
+        } else {
+            abort(403, 'you do not authorized for this web site');
+        }
+
     }
 
 //consulta 8
     public function listaDeVerificadoresYSuCantidadDeOrdenEntregado( Request $request, User $users)
     {
-//        concat_ws(' ',c.last_name,mother_last_name,c.first_name,c.second_name)as cliente
-        $request->user()->authorizeRole(['administrador']);
-        $users = DB::select(
-            "select concat_ws(' ',u.last_name,u.mother_last_name,u.first_name,u.second_name) as verificadores,
+        if ($request->user()->authorizeRole(['administrador'])) {
+            $users = DB::select(
+                "select concat_ws(' ',u.last_name,u.mother_last_name,u.first_name,u.second_name) as verificadores,
             COUNT(o.id) as cantidadEntregado
             FROM roles r INNER JOIN role_user ru
             ON r.id = ru.role_id
@@ -131,8 +134,12 @@ class UserStatusOrderController extends Controller
             INNER JOIN orders o
             on eo.order_id = o.id
             GROUP BY verificadores;"
-        );
-        //    dd($users);
-        return view('users.listaDeVerificadoresYSuCantidadDeOrdenEntregado',compact('users'));
+            );
+            //    dd($users);
+            return view('users.listaDeVerificadoresYSuCantidadDeOrdenEntregado',compact('users'));
+        } else {
+            abort(403, 'you do not authorized for this web site');
+        }
+
     }
 }

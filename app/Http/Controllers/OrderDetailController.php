@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Client;
 use App\OrderDetail;
+use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class OrderDetailController extends Controller
 {
@@ -81,5 +84,24 @@ class OrderDetailController extends Controller
     public function destroy(OrderDetail $orderDetail)
     {
         //
+    }
+
+    public function detalleDeOrdenesPorCliente(Request $request, Client $clients){
+        if ($request->user()->authorizeRole(['administrador'])) {
+//            $users =  DB::table('users')->select('*')->get();
+            $clients = DB::select("
+                select c.id as id, concat_ws(' ',c.last_name,c.mother_last_name,c.first_name,c.second_name) as cliente,
+                       c.ci as ci ,
+                       CASE c.active
+                          when 1 then 'activo'
+                          when 0 then 'inactivo'
+                       END as activo
+                from clients c;"
+            );
+//            dd($users);
+            return view('clients.detalleDeOrdenesPorCliente',compact('clients'));
+        } else {
+            abort(403, 'you do not authorized for this web site');
+        }
     }
 }

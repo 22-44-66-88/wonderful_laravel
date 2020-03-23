@@ -86,10 +86,9 @@ class ClientController extends Controller
 
     public function cantidadDeProductosPorCliente_2( Request $request, Client $clients)
     {
-        $request->user()->authorizeRole(['administrador']);
-
-        $clients = DB::select(
-            "select concat_ws(' ',c.last_name,c.mother_last_name,c.first_name,c.second_name) as cliente,
+        if ($request->user()->authorizeRole(['administrador'])) {
+            $clients = DB::select(
+                "select concat_ws(' ',c.last_name,c.mother_last_name,c.first_name,c.second_name) as cliente,
                  count(do.id) as cantidadProducto, year(o.created_at) as anio
             from categories d join sub_categories sd on d.id = sd.category_id
                  join articles a on sd.id = a.sub_category_id
@@ -103,8 +102,11 @@ class ClientController extends Controller
             -- and year(o.created_at) = 2014
             group by anio, cliente
             order by cantidadProducto desc;"
-        );
+            );
 //        dd($clients);
-        return view('clients.cantidadDeProductosPorCliente_2',compact('clients'));
+            return view('clients.cantidadDeProductosPorCliente_2',compact('clients'));
+        } else {
+            abort(403, 'you do not authorized for this web site');
+        }
     }
 }

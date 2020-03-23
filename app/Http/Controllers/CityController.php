@@ -85,10 +85,9 @@ class CityController extends Controller
         //
     }
     public function promedioVentasPorCiudades(Request $request , City $cities){
-        $request->user()->authorizeRole(['administrador']);
-
-        $cities  = DB::select(
-            "
+        if ($request->user()->authorizeRole(['administrador'])) {
+            $cities  = DB::select(
+                "
                 select c.city as ciudad, count(do.article_id) as cantidad, avg(do.sub_total) as totalVenta
                 FROM cities c INNER JOIN transport_fares t
                     ON c.id = t.city_id
@@ -103,17 +102,20 @@ class CityController extends Controller
                 where po.id = 4
                 GROUP BY ciudad;
             "
-        );
-
-        $barchart = new BarChart();
-
-        foreach ($cities as $city){
-            $barchart->dataset(
-                $city->ciudad,'bar',[$city->totalVenta ]
             );
-//            $barchart->
-        }
 
-        return view('cities.promedioVentasPorCiudades',compact('barchart'));
+            $barchart = new BarChart();
+
+            foreach ($cities as $city){
+                $barchart->dataset(
+                    $city->ciudad,'bar',[$city->totalVenta ]
+                );
+//            $barchart->
+            }
+
+            return view('cities.promedioVentasPorCiudades',compact('barchart'));
+        } else {
+            abort(403, 'you do not authorized for this web site');
+        }
     }
 }

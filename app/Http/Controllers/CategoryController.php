@@ -110,12 +110,11 @@ class CategoryController extends Controller
     }
 
 //    dev sara
-    public function promedioDeventasPorDepartamento(Request $request, Category $categories_promedios){
+    public function promedioDeventasPorDepartamento(Request $request, Category $categorias){
 //        departamento = category
-        $request->user()->authorizeRole(['administrador']);
-
-        $categories_promedios = DB::select(
-            "
+        if ($request->user()->authorizeRole(['administrador'])) {
+            $categorias = DB::select(
+                "
                 select c.category as departamento, a.title as producto, count(od.article_id) as cantidad, avg(od.sub_total) as totalVenta
                 from categories c join sub_categories sc on c.id = sc.category_id
                      join articles a on sc.id = a.sub_category_id
@@ -128,16 +127,18 @@ class CategoryController extends Controller
                 group by departamento,producto
                 order by cantidad desc;
             "
-        );
+            );
 
-        return view('categories.promedioDeventasPorDepartamento',compact('categories_promedios'));
+            return view('categories.promedioDeventasPorDepartamento',compact('categorias'));
+        } else {
+            abort(403, 'you do not authorized for this web site');
+        }
     }
 
     function promedioDeventasPorDepartamentoBarChart(Request $request, Category $categories_promedios){
-        $request->user()->authorizeRole(['administrador']);
-
-        $categories_promedios = DB::select(
-            "
+        if ($request->user()->authorizeRole(['administrador'])) {
+            $categories_promedios = DB::select(
+                "
                 select c.category as departamento, count(od.article_id) as cantidad, avg(od.sub_total) as totalVenta
                 from categories c join sub_categories sc on c.id = sc.category_id
                      join articles a on sc.id = a.sub_category_id
@@ -151,17 +152,20 @@ class CategoryController extends Controller
                 group by departamento
                 order by cantidad desc;
             "
-        );
+            );
 //        dd($categories_promedios);
 //        pie chart
-        $chart = new BarChart();
-        foreach ($categories_promedios as $categories_promedio){
-            $chart->dataset($categories_promedio->departamento,'bar',[
-                $categories_promedio->totalVenta
-            ]);
-        }
+            $chart = new BarChart();
+            foreach ($categories_promedios as $categories_promedio){
+                $chart->dataset($categories_promedio->departamento,'bar',[
+                    $categories_promedio->totalVenta
+                ]);
+            }
 //        $chart->minimalist(false);
 //        $chart->
-        return view('categories.promedioDeventasPorDepartamentoBarChart',compact('chart'));
+            return view('categories.promedioDeventasPorDepartamentoBarChart',compact('chart'));
+        } else {
+            abort(403, 'you do not authorized for this web site');
+        }
     }
 }

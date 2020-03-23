@@ -63,7 +63,7 @@
                 </div>
             </div>
 
-            <div class="col-md-9">
+            <div class="col-md-5">
                 <div class="card">
                     <div class="card-header">
                         <label class="float-left">Producto : {{$comentarios[0]->articulo}}</label>
@@ -90,6 +90,22 @@
                     </div>
                 </div>
             </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header">
+                        <label class="float-left">Porcentaje</label>
+                    </div>
+                    <div class="card-body">
+                        <div style="width: 100%;">
+                            {{$barchart->container()}}
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+@endsection
+@section('scriptsBarChart')
+    {{--    <script src="{{asset('js/chartjs-2.7.1/Chart.min.js')}}"></script>--}}
+    {{$barchart->script()}}
 @endsection
