@@ -47,10 +47,19 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/reportes/usuarios_verificadores' , 'UserStatusOrderController@listaDeVerificadoresYSuCantidadDeOrdenEntregado')->name('usuarios_verificadores');
 
 //    consulta 9
-    Route::get('/reportes/raitings/{article_id}/raiting_comentarios_articulos', 'RaitingArticleController@raitingsYComentariosArticulos')->name('raiting_comentarios_articulos');
+    Route::get('/reportes/raitings/raiting_comentarios_articulos', 'RaitingArticleController@raitingsYComentariosArticulos')->name('raiting_comentarios_articulos');
 //          consulta 9.1 comentarios seung el raiting (segun las evaluaciones de acuerdo a las estrellas)
-            Route::get('/reportes/raiting/{article}/{raiting}/comentarios', 'RaitingArticleController@comentariosDeLosClientesPorRaiting')->name('comentarios');
+            Route::get('/reportes/articulo/{article_id}/raitings', 'RaitingArticleController@raitingsArticulos')->name('raitings');
+            Route::get('/reportes/articulo/raiting/{raiting}/comentarios', 'RaitingArticleController@comentariosArticulos')->name('comentarios');
 
 //    consulta 10
-    Route::get('/reportes/detalle_ordenes_por_cliente' , 'OrderDetailController@detalleDeOrdenesPorCliente')->name('articulos');
+//    1 pantalla
+    Route::get('/reportes/detalle_ordenes_por_cliente' , 'OrderDetailController@detalleDeOrdenesPorCliente')->name('clientes');
+//      2 pantalla ordenes
+        Route::get('/reportes/cliente/{client_id}/ordenes' , 'OrderDetailController@listaDeOrdenesPorCliente')->name('ordenes');
+//      3 pantalla detalle ordenes
+        Route::get('/reportes/cliente/orden/{order_id}/detalle_orden' , 'OrderDetailController@detallesDeLasOrdnesDelCliente')->name('detalle_orden');
+//      4 pantalla detalle del articulo
+        Route::get('/reportes/cliente/orden/detalle_orden/{article_id}/articulo' , 'OrderDetailController@detalleDelArticulo')->name('articulo');
+
 });

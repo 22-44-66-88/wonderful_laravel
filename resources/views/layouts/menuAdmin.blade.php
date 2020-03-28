@@ -173,11 +173,11 @@
 
                     <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                         <!-- User image -->
-                        <li class="user-header bg-primary">
+                        <li class="user-header bg-dark">
                             <img src="{{asset("/admin-lte/dist/img/user2-160x160.jpg")}}" class="img-circle elevation-2" alt="User Image">
                             <p>
                                 {{ Auth::user()->first_name }} {{ Auth::user()->last_name }} {{ Auth::user()->mother_last_name }}
-                                <br> Web Developer
+                                <br> Adminstrador
                             </p>
                         </li>
                         <!-- Menu Footer-->
@@ -209,7 +209,8 @@
     <aside class="main-sidebar navWonder sidebar-dark-primary elevation-4">
         <!-- Brand Logo -->
         <a href="/" class="brand-link">
-            <img src="{{asset("/admin-lte/dist/img/AdminLTELogo.png")}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+{{--            {{asset("/admin-lte/dist/img/AdminLTELogo.png")}}--}}
+            <img src="{{asset("/images/logo1.jpg")}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
                  style="opacity: .8">
             <span class="brand-text font-weight-light">WonderFuL</span>
         </a>
@@ -284,7 +285,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="/reportes/raitings/{{1}}/raiting_comentarios_articulos" class="nav-link">
+                                <a href="/reportes/raitings/raiting_comentarios_articulos" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p> 9.- Raiting y comentarios</p> <br> &ensp;&ensp;&ensp;&ensp;
                                     <p>de los productos</p>
