@@ -64,7 +64,7 @@
                                         @if($order->estado == 'entregado')
                                             <td><span class="right badge badge-success">{{$order->estado}}</span></td>
                                         @endif
-                                        <td>{{$order->fecha}}</td>
+                                        <td>{{$order->fechaOrden}}</td>
 {{--                                        cuando el estado es inicial se matiene el usuario como el cliente mismo--}}
                                         @if($order->estado == 'inicial')
                                             <td><span class="right badge badge-secondary">{{$order->cliente}}</span></td>

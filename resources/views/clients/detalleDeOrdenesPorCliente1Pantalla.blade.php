@@ -35,7 +35,9 @@
                                 <tr>
                                     <th class="text-center">&ensp; ID</th>
                                     <th>Cliente</th>
-                                    <th>CI</th>
+                                    <th>Telefono</th>
+                                    <th>Genero</th>
+                                    <th>Usuario</th>
                                     <th>Activo</th>
                                     <th>Ver Ordenes</th>
                                 </tr>
@@ -45,38 +47,32 @@
                                         <tr>
                                             <th class="text-center">{{$client->id}}</th>
                                             <td>{{$client->cliente}}</td>
-                                            <td>{{$client->ci}}</td>
+                                            <td>{{$client->telefono}}</td>
+                                            <td>{{$client->genero}}</td>
+                                            <td>{{$client->user}}</td>
                                             @if($client->activo == 'activo')
                                                 <td><span class="right badge badge-success">{{$client->activo}}</span></td>
                                             @endif
                                             @if($client->activo == 'inactivo')
                                                 <td><span class="right badge badge-danger">{{$client->activo}}</span></td>
                                             @endif
-{{--                                            @if($client->activo == 'activo')--}}
-                                                <td>
-                                                    <button type="submit" class="btn">
-                                                        <a class="btn btn-info btn-sm elevation-1" href="/reportes/cliente/{{$client->id}}/ordenes">
-                                                            <i class="fas fa-eye"></i> ver
-                                                        </a>
-                                                    </button>
-                                                </td>
-{{--                                            @endif--}}
-{{--                                            @if($client->activo == 'inactivo')--}}
-{{--                                                <td>--}}
-{{--                                                    <button type="submit" class="btn btn-info" disabled>--}}
-{{--                                                        <i class="fas fa-eye"></i> ver--}}
-{{--                                                    </button>--}}
-{{--                                                </td>--}}
-{{--                                            @endif--}}
-
+                                            <td>
+                                                <button type="submit" class="btn">
+                                                    <a class="btn btn-info btn-sm elevation-1" href="/reportes/cliente/{{$client->id}}/ordenes">
+                                                        <i class="fas fa-eye"></i> ver
+                                                    </a>
+                                                </button>
+                                            </td>
                                         </tr>
                                     @endforeach
                                 </tbody>
                                 <tfoot>
                                 <tr>
-                                    <th class="text-center">ID</th>
+                                    <th class="text-center">&ensp; ID</th>
                                     <th>Cliente</th>
-                                    <th>CI</th>
+                                    <th>Telefono</th>
+                                    <th>Genero</th>
+                                    <th>Usuario</th>
                                     <th>Activo</th>
                                     <th>Ver Ordenes</th>
                                 </tr>

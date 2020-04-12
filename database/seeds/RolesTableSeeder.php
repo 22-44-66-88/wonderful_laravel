@@ -19,14 +19,14 @@ class RolesTableSeeder extends Seeder
             'updated_at' => date("Y-m-d H:i:s"),
         ]);
 
-//        user 1
+//        user 2
         DB::table('roles')->insert([
             'role' => 'colaborador',
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s"),
         ]);
 
-//        user 1
+//        user 3
         DB::table('roles')->insert([
             'role' => 'usuario',
             'created_at' => date("Y-m-d H:i:s"),
@@ -34,9 +34,15 @@ class RolesTableSeeder extends Seeder
         ]);
 
 
-//        user 1
+//        user 4
         DB::table('roles')->insert([
             'role' => 'verificador',
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
+        ]);
+//user 5
+        DB::table('roles')->insert([
+            'role' => 'cliente',
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s"),
         ]);

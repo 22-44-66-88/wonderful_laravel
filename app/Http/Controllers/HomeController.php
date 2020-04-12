@@ -24,7 +24,6 @@ class HomeController extends Controller
      */
     public function index(Request $request)
     {
-
 //        $request->user()->authorizeRole('adminstrador');
         $user = Auth::user();
 //        return view('home');
@@ -35,6 +34,10 @@ class HomeController extends Controller
             return view('home',compact('user'));
         }
         if ($request->user()->authorizeRole(['verificador'])) {
+            return view('home',compact('user'));
+        }
+
+        if ($request->user()->authorizeRole(['client'])) {
             return view('home',compact('user'));
         }
     }

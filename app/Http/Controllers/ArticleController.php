@@ -113,7 +113,7 @@ class ArticleController extends Controller
                             inner join status_orders so on so.order_id = o.id
                             inner join process_orders po on so.process_order_id = po.id
                         where po.id = 4
-                        and MONTH(o.created_at) = 4
+                        -- and MONTH(o.created_at) = 4
                         group by a.title , dt.quantity , mes
                         order by cantidad desc;"
             );
@@ -139,7 +139,7 @@ class ArticleController extends Controller
                          join cities c on tf.city_id = c.id
                          join status_orders so on o.id = so.order_id
                          join process_orders po on so.process_order_id = po.id
-                    where po.id = 4
+                    where po.id = 5
                     and c.id = $city_id
                     group by ciudad,producto
                     order by totalVenta desc;

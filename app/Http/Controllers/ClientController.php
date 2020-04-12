@@ -98,7 +98,7 @@ class ClientController extends Controller
                  join process_orders po on eo.process_order_id = po.id
                  join price_articles pa on a.id = pa.article_id
                  join clients c on o.client_id = c.id
-            where eo.id = 4
+            -- where eo.id = 5
             -- and year(o.created_at) = 2014
             group by anio, cliente
             order by cantidadProducto desc;"

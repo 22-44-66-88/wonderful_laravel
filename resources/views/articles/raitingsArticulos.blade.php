@@ -24,9 +24,9 @@
                 <!-- /.col-md-6 -->
                 <div class="col-lg-12">
                     <div class="card card-primary card-outline">
-                    {{--                <div class="card-header">--}}
-                    {{--                    <h3 class="card-title">DataTable with default features</h3>--}}
-                    {{--                </div>--}}
+                    <div class="card-header">
+                        <h3 class="card-title"><b>Articulo: &ensp; </b>{{$raitings[0]->article}}</h3>
+                    </div>
                     <!-- /.card-header -->
                         <div class="card-body">
                             {{--                            table-striped projects  otro estilo=> table-bordered--}}
@@ -42,7 +42,7 @@
                                 <tbody>
                                 @foreach($raitings as $raiting)
                                     <tr>
-                                        @if($raiting->raiting == 5)
+                                        @if($raiting->estrella == 5)
                                             {{--                                        <td><img src="{{asset('/stars/5stars.jpg')}}" style="width: 110px;height: 19px;"></td>--}}
                                             <td>
                                                 <a href="/reportes/raiting/{{$raiting->article}}/{{$raiting->raiting}}/comentarios">
@@ -50,28 +50,28 @@
                                                 </a>
                                             </td>
                                         @endif
-                                        @if($raiting->raiting == 4)
+                                        @if($raiting->estrella == 4)
                                             <td>
                                                 <a href="/reportes/raiting/{{$raiting->article}}/{{$raiting->raiting}}/comentarios">
                                                     <img src="{{asset('/stars/4stars.jpg')}}" style="width: 110px;height: 19px;">
                                                 </a>
                                             </td>
                                         @endif
-                                        @if($raiting->raiting == 3)
+                                        @if($raiting->estrella == 3)
                                             <td>
                                                 <a href="/reportes/raiting/{{$raiting->article}}/{{$raiting->raiting}}/comentarios">
                                                     <img src="{{asset('/stars/3stars.jpg')}}" style="width: 110px;height: 19px;">
                                                 </a>
                                             </td>
                                         @endif
-                                        @if($raiting->raiting == 2)
+                                        @if($raiting->estrella == 2)
                                             <td>
                                                 <a href="/reportes/raiting/{{$raiting->article}}/{{$raiting->raiting}}/comentarios">
                                                     <img src="{{asset('/stars/2stars.jpg')}}" style="width: 110px;height: 19px;">
                                                 </a>
                                             </td>
                                         @endif
-                                        @if($raiting->raiting == 1)
+                                        @if($raiting->estrella == 1)
                                             <td>
                                                 <a href="/reportes/raiting/{{$raiting->article}}/{{$raiting->raiting}}/comentarios">
                                                     <img src="{{asset('/stars/1stars.jpg')}}" style="width: 110px;height: 19px;">
@@ -79,10 +79,10 @@
                                             </td>
                                         @endif
                                         <td>{{$raiting->cantidadCliente}}</td>
-                                        <td>{{$raiting->porcentaje}} %</td>
+                                        <td>{{$raiting->cantidadCliente * 100 / $porcentajes[0]->montoTotal }} %</td>
                                         <td>
                                             <button type="submit" class="btn">
-                                                <a class="btn btn-info btn-sm elevation-1" href="/reportes/articulo/raiting/{{$raiting->raiting }}/comentarios">
+                                                <a class="btn btn-info btn-sm elevation-1" href="/reportes/articulo/raiting/{{$raiting->article_id}}/{{$raiting->estrella}}/comentarios">
                                                     <i class="fas fa-eye"></i> ver
                                                 </a>
                                             </button>

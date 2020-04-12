@@ -39,7 +39,11 @@
                                     </div>
                                     <div class="col-6 float-right">
                                         <h3 class="card-title"><b>Fecha:</b>&ensp; {{$orderDetails[0]->fecha}}</h3>
-                                        <h3 class="card-title float-right"><b>ID:</b>&ensp; {{$orderDetails[0]->id}}</h3>
+                                        @if($totalAmounts)
+                                            <h3 class="card-title float-right"><b>Total:</b>&ensp; {{$totalAmounts[0]->montoTotal}}</h3>
+                                        @else
+                                            No hay datos...
+                                        @endif
                                     </div>
                                 @else
                                     <div class="col-12">
@@ -55,38 +59,41 @@
                                 <thead>
                                 <tr>
                                     <th class="text-center">&ensp;&ensp;ID</th>
-                                    <th>&ensp; Articulo</th>
+                                    <th>Articulo</th>
                                     <th>Precio</th>
                                     <th>Cantidad</th>
                                     <th>Sub Total</th>
+                                    <th>Ver Articulo</th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                     @foreach($orderDetails as $orderDetail)
                                         <tr>
                                             <th class="text-center">{{$orderDetail->article_id}}</th>
+                                            <td>{{$orderDetail->articulo}}</td>
+                                            <td>{{$orderDetail->precio}}</td>
+                                            <td>{{$orderDetail->cantidad}}</td>
+                                            <td>{{$orderDetail->subTotal}}</td>
                                             <td>
                                                 <button type="submit" class="btn">
                                                     <a class="btn bg-success elevation-1 btn-sm" href="/reportes/cliente/orden/detalle_orden/{{$orderDetail->article_id}}/articulo">
                                                         <i class="fas fa-eye"></i>
-                                                        <span class="right badge badge-success">Ver &ensp;| {{$orderDetail->articulo}}</span>
-    {{--                                                    &ensp;Ver | {{$orderDetail->articulo}}--}}
+                                                        <span class="right badge badge-success">Ver</span>
+                                                        {{--                                                    &ensp;Ver | {{$orderDetail->articulo}}--}}
                                                     </a>
                                                 </button>
                                             </td>
-                                            <td>{{$orderDetail->precio}}</td>
-                                            <td>{{$orderDetail->cantidad}}</td>
-                                            <td>{{$orderDetail->subTotal}}</td>
                                         </tr>
                                     @endforeach
                                 </tbody>
                                 <tfoot>
                                 <tr>
                                     <th class="text-center">&ensp;ID</th>
-                                    <th>&ensp; Articulo</th>
+                                    <th>Articulo</th>
                                     <th>Precio</th>
                                     <th>Cantidad</th>
                                     <th>Sub Total</th>
+                                    <th>Ver Articulo</th>
                                 </tr>
                                 </tfoot>
                             </table>

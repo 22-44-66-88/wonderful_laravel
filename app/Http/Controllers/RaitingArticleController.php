@@ -104,46 +104,58 @@ class RaitingArticleController extends Controller
 
             $raitings = DB::select(
                 "
-                select a.title as article ,ra.raiting as raiting ,count(ra.client_id)  cantidadCliente, ra.raiting * 100  / count(ra.client_id) as porcentaje
-                from raiting_articles ra inner join clients c on ra.client_id = c.id
-                     inner join commentary_articles ca on c.id = ca.client_id
-                     inner join articles a on ra.article_id = a.id
-                where a.id = $article_id
-                group by ra.raiting
-                order by ra.raiting desc ;
-            "
+                select a.id as article_id, a.title as article ,s.id as estrella, s.star as raiting , count(ra.star_id) as cantidadCliente
+                from stars s inner join raiting_articles ra on s.id = ra.star_id
+                   inner join clients c on ra.client_id = c.id
+                   inner join commentary_articles ca on c.id = ca.client_id
+                   inner join articles a on ra.article_id = a.id
+                   where a.id = 1
+                   group by s.id
+                   order by s.star;"
             );
 
-            return view('articles.raitingsArticulos',compact('raitings'));
+            $porcentajes = DB::select(
+                "
+                    select cantidad.article, sum(cantidad.cantidadCliente) as montoTotal
+                     from (select a.title as article ,s.id as estrella, s.star as raiting , count(ra.star_id) as cantidadCliente
+                          from stars s inner join raiting_articles ra on s.id = ra.star_id
+                               inner join clients c on ra.client_id = c.id
+                               inner join commentary_articles ca on c.id = ca.client_id
+                               inner join articles a on ra.article_id = a.id
+                               where a.id = 1
+                               group by s.id
+                               order by s.star) as cantidad
+                      group by cantidad.article;
+                "
+            );
+
+            return view('articles.raitingsArticulos',compact('raitings','porcentajes'));
         } else {
             abort(403, 'you do not authorized for this web site');
         }
     }
 
-    public function comentariosArticulos($raiting, CommentaryArticle $comentarios , Request $request){
+    public function comentariosArticulos($article_id , $raiting, CommentaryArticle $comentarios , Request $request){
         if ($request->user()->authorizeRole(['administrador'])) {
-//        raitings
+
 
             $comentarios = DB::select(
                 "
-                select concat_ws(' ',c.last_name,c.mother_last_name,c.first_name,c.second_name) as cliente,
-                       ca.comment as comentario , ca.created_at as fecha
-                from raiting_articles ra inner join clients c on ra.client_id = c.id
-                     inner join commentary_articles ca on c.id = ca.client_id
-                     inner join articles a on ra.article_id = a.id
-                where ra.raiting = $raiting
-                group by ca.comment , ca.created_at , c.id
-                order by ca.created_at desc ;
+                select a.title as article ,s.id as estrella, s.id as raiting , ca.created_at as fecha,
+                       ca.comment as cometario, concat_ws(' ',c.last_name,c.mother_last_name,c.first_name,c.second_name) as cliente,
+                       ia.url_image as imagen, a.description as description
+                  from stars s inner join raiting_articles ra on s.id = ra.star_id
+                       inner join clients c on ra.client_id = c.id
+                       inner join commentary_articles ca on c.id = ca.client_id
+                       inner join articles a on ra.article_id = a.id
+                       inner join image_articles ia on a.id = ia.article_id
+                       where a.id = $article_id
+                       and  s.id = $raiting
+                       group by a.title, s.id, s.id, ca.created_at, ca.comment, cliente, ia.url_image, a.description
+                       order by ca.created_at  desc;
             "
             );
-
-//            $barchart = new BarChart();
-//            foreach ($raitings as $raitingkey){
-//                $barchart->dataset(
-//                    $raitingkey->raiting,'bar',[$raitingkey->porcentaje]
-//                );
-//            }
-
+//            dd($comentarios);
             return view('articles.comentariosArticulos',compact('comentarios'));
         } else {
             abort(403, 'you do not authorized for this web site');

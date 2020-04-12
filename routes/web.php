@@ -38,7 +38,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/reportes/ventas_ciudades', 'CityController@promedioVentasPorCiudades')->name('ventas_ciudades');
 
 //    consulta 6
-    Route::get('/reportes/ventas/{city_id}/articulos_promedio_ventas_ciudades', 'ArticleController@promedioDeProductosMasVendidosPorCiudades')->name('articulos_promedio_ventas_ciudades');
+Route::get('/reportes/ventas/{city_id}/articulos_promedio_ventas_ciudades', 'ArticleController@promedioDeProductosMasVendidosPorCiudades')->name('articulos_promedio_ventas_ciudades');
 
 //    consulta 7
     Route::get('/reportes/colaboradores/ordenes_despachados', 'UserStatusOrderController@listaDeColaboradoresYLaCantidadeDeOrdenesDespachados')->name('ordenes_despachados');
@@ -50,7 +50,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/reportes/raitings/raiting_comentarios_articulos', 'RaitingArticleController@raitingsYComentariosArticulos')->name('raiting_comentarios_articulos');
 //          consulta 9.1 comentarios seung el raiting (segun las evaluaciones de acuerdo a las estrellas)
             Route::get('/reportes/articulo/{article_id}/raitings', 'RaitingArticleController@raitingsArticulos')->name('raitings');
-            Route::get('/reportes/articulo/raiting/{raiting}/comentarios', 'RaitingArticleController@comentariosArticulos')->name('comentarios');
+            Route::get('/reportes/articulo/raiting/{raiting}/{article_id}/comentarios', 'RaitingArticleController@comentariosArticulos')->name('comentarios');
 
 //    consulta 10
 //    1 pantalla

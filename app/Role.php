@@ -9,4 +9,8 @@ class Role extends Model
     function users(){
         return $this->belongsToMany(User::class);
     }
+
+    function clients(){
+        return $this->belongsToMany(Client::class);
+    }
 }
