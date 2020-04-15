@@ -54,3 +54,7 @@ Route::group(['middleware' => 'auth'], function () {
 //    consulta 10
     Route::get('/reportes/detalle_ordenes_por_cliente' , 'OrderDetailController@detalleDeOrdenesPorCliente')->name('articulos');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

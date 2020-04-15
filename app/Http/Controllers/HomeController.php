@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -22,20 +21,8 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index(Request $request)
+    public function index()
     {
-
-//        $request->user()->authorizeRole('adminstrador');
-        $user = Auth::user();
-//        return view('home');
-        if ($request->user()->authorizeRole(['administrador'])) {
-            return view('homeAdmin',compact('user'));
-        }
-        if ($request->user()->authorizeRole(['colaborador'])) {
-            return view('home',compact('user'));
-        }
-        if ($request->user()->authorizeRole(['verificador'])) {
-            return view('home',compact('user'));
-        }
+        return view('home');
     }
 }

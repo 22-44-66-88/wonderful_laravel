@@ -26,7 +26,7 @@ class CreateUsersTable extends Migration
             $table->string('mother_last_name');
             $table->enum('gender',['M','F']);
             // $table->string('user')->unique();
-            $table->string('email')->unique();
+            $table->string('email',40)->unique();
             $table->string('password');
             $table->boolean('active');
             $table->timestamp('email_verified_at')->nullable();
