@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Article;
 use App\Charts\BarChart;
-use App\City;
+use App\SubCategory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -15,9 +15,23 @@ class ArticleController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        if ($request->user()->authorizeRole(['administrador'])) {
+            
+            $sub_categories = SubCategory::all();
+
+            $articles = DB::select(
+                "select a.id as id , a.title as article , a.marker as marker , a.stock  as stock,
+                        sb.sub_category as sub_category , c.category as category
+                 from  articles a inner join sub_categories sb on a.sub_category_id  = sb.id 
+                 inner join categories c on sb.category_id  = c.id;
+            ");
+            //        dd($articles);
+            return view('articles.crud.index', compact('articles','sub_categories'));
+        } else {
+            abort(403, 'you do not authorized for this web site');
+        }
     }
 
     /**
@@ -38,7 +52,26 @@ class ArticleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // $articles = request()->all();
+            
+        // return response()->json($articles);
+        
+        // $articles = request()->except('_token');
+         
+        
+        $request->validate([
+            'sub_category_id' => 'required',
+            'title' => 'required',
+            'marker' => 'required',
+            'description' => 'required',
+            'stock' => 'required',
+            ]);
+            
+            Article::create($request->all());
+            
+            // return response()->json($request); 
+            return redirect()->route('articles.index')
+            ->with('success','Product created successfully.');
     }
 
     /**
@@ -87,7 +120,6 @@ class ArticleController extends Controller
     }
     public function articulosVendidosPorMes( Request $request, Article $articles)
     {
-//        concat_ws(' ',c.last_name,mother_last_name,c.first_name,c.second_name)as cliente
         if ($request->user()->authorizeRole(['administrador'])) {
             $articles = DB::select(
                 "select a.title as producto , dt.quantity as cantidad,
@@ -113,7 +145,7 @@ class ArticleController extends Controller
                             inner join status_orders so on so.order_id = o.id
                             inner join process_orders po on so.process_order_id = po.id
                         where po.id = 4
-                        and MONTH(o.created_at) = 4
+                        -- and MONTH(o.created_at) = 4
                         group by a.title , dt.quantity , mes
                         order by cantidad desc;"
             );
@@ -139,7 +171,7 @@ class ArticleController extends Controller
                          join cities c on tf.city_id = c.id
                          join status_orders so on o.id = so.order_id
                          join process_orders po on so.process_order_id = po.id
-                    where po.id = 4
+                    where po.id = 5
                     and c.id = $city_id
                     group by ciudad,producto
                     order by totalVenta desc;

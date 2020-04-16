@@ -44,5 +44,21 @@ class UserRoleTableSeeder extends Seeder
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s"),
         ]);
+
+        // seeder 5
+        DB::table('role_user')->insert([
+            'role_id' => 5,
+            'user_id' => 5,
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
+        ]);
+
+        // seeder 5
+        DB::table('role_user')->insert([
+            'role_id' => 5,
+            'user_id' => 6,
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
+        ]);
     }
 }

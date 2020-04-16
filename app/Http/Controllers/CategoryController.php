@@ -122,7 +122,7 @@ class CategoryController extends Controller
                      join orders o on od.order_id = o.id
                      join status_orders so on o.id = so.order_id
                      join process_orders po on so.process_order_id = po.id
-                where so.process_order_id = 4
+                where so.process_order_id = 5
                 -- and c.id = 3
                 group by departamento,producto
                 order by cantidad desc;
@@ -146,7 +146,7 @@ class CategoryController extends Controller
                      join orders o on od.order_id = o.id
                      join status_orders so on o.id = so.order_id
                      join process_orders po on so.process_order_id = po.id
-                where so.process_order_id = 4
+                where so.process_order_id = 5
                 -- and c.id = 3
                 -- group by a.id
                 group by departamento

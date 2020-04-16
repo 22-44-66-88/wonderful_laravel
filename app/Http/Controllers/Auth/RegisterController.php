@@ -50,8 +50,16 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
+<<<<<<< HEAD
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+=======
+//            'name' => ['required', 'string', 'max:255'],
+//            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+//            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'first_name' => ['required', 'string', 'max:255'],
+            'user' => ['required', 'string', 'max:255', 'unique:users'],
+>>>>>>> 060a53449c260cfb482a528fe5b24100c9274db5
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
     }
@@ -65,9 +73,25 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         return User::create([
+<<<<<<< HEAD
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+=======
+//            'name' => $data['name'],
+//            'email' => $data['email'],
+//            'password' => Hash::make($data['password']),
+            'ci' => $data['ci'],
+            'first_name' => $data['first_name'],
+            'second_name' => $data['second_name'],
+            'last_name' => $data['last_name'],
+            'mother_last_name' => $data['mother_last_name'],
+            'gender' => $data['gender'],
+            'user' => strtolower($data['user']) ,
+            // 'user' => strtolower($data['user']),
+            'password' => bcrypt($data['password']),
+            'active' => $data['active'],
+>>>>>>> 060a53449c260cfb482a528fe5b24100c9274db5
         ]);
     }
 }

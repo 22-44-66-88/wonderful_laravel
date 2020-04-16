@@ -15,7 +15,7 @@ class CreateProcessOrdersTable extends Migration
     {
         Schema::create('process_orders', function (Blueprint $table) {
             $table->id();
-            $table->enum('process_order',['process','preparation','dispatched','delivered']);
+            $table->enum('process_order',['initial','process','preparation','dispatched','delivered']);
             $table->timestamps();
         });
     }

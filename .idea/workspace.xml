@@ -2,21 +2,94 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="63a9da84-2db9-48ac-b8ce-a203d9e936c7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/clients/detalleDeOrdenesPorCliente.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/layouts/menuAdminBackup.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/StarController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Star.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2010_04_03_042646_create_stars_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeds/ClientRoleTableSeeder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeds/ClientsTableSeeder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/imagenes/imagenes_articulos/1.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/imagenes/imagenes_articulos/10.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/imagenes/imagenes_articulos/11.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/imagenes/imagenes_articulos/12.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/imagenes/imagenes_articulos/12_segundario.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/imagenes/imagenes_articulos/13.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/imagenes/imagenes_articulos/13_segundario.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/imagenes/imagenes_articulos/13_segungario1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/imagenes/imagenes_articulos/14.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/imagenes/imagenes_articulos/15.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/imagenes/imagenes_articulos/16.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/imagenes/imagenes_articulos/17.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/imagenes/imagenes_articulos/18.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/imagenes/imagenes_articulos/19.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/imagenes/imagenes_articulos/1_segundario.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/imagenes/imagenes_articulos/1a.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/imagenes/imagenes_articulos/1b.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/imagenes/imagenes_articulos/1c.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/imagenes/imagenes_articulos/1d.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/imagenes/imagenes_articulos/1e.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/imagenes/imagenes_articulos/1f.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/imagenes/imagenes_articulos/1g.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/imagenes/imagenes_articulos/1h.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/imagenes/imagenes_articulos/2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/imagenes/imagenes_articulos/20.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/imagenes/imagenes_articulos/21.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/imagenes/imagenes_articulos/22.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/imagenes/imagenes_articulos/23.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/imagenes/imagenes_articulos/24.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/imagenes/imagenes_articulos/25.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/imagenes/imagenes_articulos/2_segundario.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/imagenes/imagenes_articulos/2a.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/imagenes/imagenes_articulos/2b.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/imagenes/imagenes_articulos/2c.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/imagenes/imagenes_articulos/2d.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/imagenes/imagenes_articulos/2e.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/imagenes/imagenes_articulos/3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/imagenes/imagenes_articulos/3_segudario.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/imagenes/imagenes_articulos/3a.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/imagenes/imagenes_articulos/3b.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/imagenes/imagenes_articulos/3c.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/imagenes/imagenes_articulos/3d.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/imagenes/imagenes_articulos/3e.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/imagenes/imagenes_articulos/4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/imagenes/imagenes_articulos/4a.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/imagenes/imagenes_articulos/4b.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/imagenes/imagenes_articulos/4c.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/imagenes/imagenes_articulos/4d.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/imagenes/imagenes_articulos/4e.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/imagenes/imagenes_articulos/5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/imagenes/imagenes_articulos/6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/imagenes/imagenes_articulos/7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/imagenes/imagenes_articulos/8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/imagenes/imagenes_articulos/9.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/imagenes/imagenes_articulos/Silver.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/imagenes/imagenes_articulos/aquamarine.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/imagenes/imagenes_articulos/black.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/imagenes/imagenes_articulos/blue.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/imagenes/imagenes_articulos/brown.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/imagenes/imagenes_articulos/crimson.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/imagenes/imagenes_articulos/goldenrod.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/imagenes/imagenes_articulos/gray.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/imagenes/imagenes_articulos/green.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/imagenes/imagenes_articulos/indigo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/imagenes/imagenes_articulos/khaki.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/imagenes/imagenes_articulos/mauv.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/imagenes/imagenes_articulos/orange.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/imagenes/imagenes_articulos/pink.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/imagenes/imagenes_articulos/red.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/imagenes/imagenes_articulos/teal.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/imagenes/imagenes_articulos/turquesa.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/imagenes/imagenes_articulos/urple.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/imagenes/imagenes_articulos/violet.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/imagenes/imagenes_articulos/white.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/imagenes/imagenes_articulos/yellow.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ArticleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ArticleController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CityController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Client.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Client.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ClientController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ClientController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/OrderDetailController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/OrderDetailController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/RaitingArticleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/RaitingArticleController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserStatusOrderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserStatusOrderController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/articles/comentariosDeLosClientesPorRaiting.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/articles/comentariosDeLosClientesPorRaiting.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/categories/promedioDeventasPorDepartamento.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/categories/promedioDeventasPorDepartamento.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/menuAdmin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/menuAdmin.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Role.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Role.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_03_15_055451_create_clients_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_03_15_055451_create_clients_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -37,6 +110,12 @@
       </list>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -157,6 +236,11 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/images" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner scope="XML" />
@@ -183,7 +267,23 @@
       <workItem from="1584713004723" duration="2504000" />
       <workItem from="1584744237702" duration="65000" />
       <workItem from="1584820088300" duration="19256000" />
-      <workItem from="1584887013217" duration="12897000" />
+      <workItem from="1584887013217" duration="13561000" />
+      <workItem from="1584982607697" duration="19909000" />
+      <workItem from="1585058692429" duration="27407000" />
+      <workItem from="1585139122045" duration="6113000" />
+      <workItem from="1585323564938" duration="4772000" />
+      <workItem from="1585623054300" duration="3848000" />
+      <workItem from="1585686314387" duration="10064000" />
+      <workItem from="1585703430233" duration="15360000" />
+      <workItem from="1585742063576" duration="9937000" />
+      <workItem from="1585793333400" duration="6555000" />
+      <workItem from="1585858660696" duration="28726000" />
+      <workItem from="1585920335918" duration="8943000" />
+      <workItem from="1586194454326" duration="842000" />
+      <workItem from="1586458535548" duration="5253000" />
+      <workItem from="1586659370111" duration="9639000" />
+      <workItem from="1586790884083" duration="2086000" />
+      <workItem from="1586832405126" duration="5233000" />
     </task>
     <task id="LOCAL-00001" summary="consulta 7 agregado , y nuevos cambios en los metodos de la consulta 6 y 9">
       <created>1584626492548</created>
@@ -220,7 +320,28 @@
       <option name="project" value="LOCAL" />
       <updated>1584683240162</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Integracion del Dashboard de administracion AdminLTE v3">
+      <created>1584932247349</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1584932247349</updated>
+    </task>
+    <task id="LOCAL-00007" summary="actualizando proyecto con adminlte">
+      <created>1585373567555</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1585373567555</updated>
+    </task>
+    <task id="LOCAL-00008" summary="actualizacion de reportes para el 1 parcial.. cambies en la tablas de raiting entre otros.">
+      <created>1586660905599</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1586660905600</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -231,7 +352,11 @@
     <MESSAGE value="Otras mejoras" />
     <MESSAGE value="mejoras en el reporte 9" />
     <MESSAGE value="mejoras en el reporte 9 con las estrellas para no volver atrar cada vez" />
-    <option name="LAST_COMMIT_MESSAGE" value="mejoras en el reporte 9 con las estrellas para no volver atrar cada vez" />
+    <MESSAGE value="Integracion del Dashboard de administracion AdminLTE v3" />
+    <MESSAGE value="otros cambios" />
+    <MESSAGE value="actualizando proyecto con adminlte" />
+    <MESSAGE value="actualizacion de reportes para el 1 parcial.. cambies en la tablas de raiting entre otros." />
+    <option name="LAST_COMMIT_MESSAGE" value="actualizacion de reportes para el 1 parcial.. cambies en la tablas de raiting entre otros." />
   </component>
   <component name="WindowStateProjectService">
     <state x="417" y="169" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1584429711368">
@@ -242,33 +367,47 @@
       <screen x="0" y="0" width="1366" height="732" />
     </state>
     <state x="441" y="0" width="484" height="736" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.732@0.0.1366.732" timestamp="1584426695767" />
-    <state x="417" y="122" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1584626128783">
+    <state x="417" y="122" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1586460014754">
       <screen x="0" y="0" width="1366" height="732" />
     </state>
-    <state x="417" y="122" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.732@0.0.1366.732" timestamp="1584626128783" />
-    <state x="346" y="19" width="687" height="694" key="#phpunit.xml" timestamp="1584842301502">
-      <screen x="0" y="0" width="1366" height="732" />
+    <state x="417" y="122" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.732@0.0.1366.732" timestamp="1586460014753" />
+    <state x="344" y="19" width="687" height="694" key="#phpunit.xml" timestamp="1586669373828">
+      <screen x="0" y="0" width="1360" height="738" />
     </state>
+    <state x="344" y="19" width="687" height="694" key="#phpunit.xml/0.0.1360.738@0.0.1360.738" timestamp="1586669373828" />
     <state x="346" y="19" width="687" height="694" key="#phpunit.xml/0.0.1366.732@0.0.1366.732" timestamp="1584842301502" />
-    <state x="228" y="0" width="918" height="736" key="CommitChangelistDialog2" timestamp="1584683239918">
-      <screen x="0" y="0" width="1366" height="732" />
+    <state x="227" y="0" width="918" height="732" key="CommitChangelistDialog2" timestamp="1586660902995">
+      <screen x="0" y="0" width="1360" height="738" />
     </state>
-    <state x="228" y="0" width="918" height="736" key="CommitChangelistDialog2/0.0.1366.732@0.0.1366.732" timestamp="1584683239918" />
+    <state x="227" y="0" key="CommitChangelistDialog2/0.0.1360.738@0.0.1360.738" timestamp="1586660902995" />
+    <state x="228" y="0" width="918" height="732" key="CommitChangelistDialog2/0.0.1366.732@0.0.1366.732" timestamp="1585373556566" />
     <state x="467" y="122" key="FileChooserDialogImpl" timestamp="1584744298748">
       <screen x="0" y="0" width="1366" height="732" />
     </state>
     <state x="467" y="122" key="FileChooserDialogImpl/0.0.1366.732@0.0.1366.732" timestamp="1584744298748" />
-    <state x="362" y="193" key="com.intellij.ide.util.TipDialog" timestamp="1584887018989">
+    <state x="360" y="195" key="com.intellij.ide.util.TipDialog" timestamp="1586832424889">
+      <screen x="0" y="0" width="1360" height="738" />
+    </state>
+    <state x="360" y="195" key="com.intellij.ide.util.TipDialog/0.0.1360.738@0.0.1360.738" timestamp="1586832424889" />
+    <state x="362" y="193" key="com.intellij.ide.util.TipDialog/0.0.1366.732@0.0.1366.732" timestamp="1586458535584" />
+    <state x="348" y="0" width="691" height="736" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1585794152205">
       <screen x="0" y="0" width="1366" height="732" />
     </state>
-    <state x="362" y="193" key="com.intellij.ide.util.TipDialog/0.0.1366.732@0.0.1366.732" timestamp="1584887018989" />
-    <state x="348" y="25" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1584824905040">
+    <state x="348" y="0" width="691" height="736" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1366.732@0.0.1366.732" timestamp="1585794152205" />
+    <state x="0" y="0" width="648" height="732" key="find.popup" timestamp="1585881174694">
       <screen x="0" y="0" width="1366" height="732" />
     </state>
-    <state x="348" y="25" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1366.732@0.0.1366.732" timestamp="1584824905040" />
-    <state x="347" y="160" key="run.anything.popup" timestamp="1584675209740">
+    <state x="0" y="0" width="645" height="738" key="find.popup/0.0.1360.738@0.0.1360.738" timestamp="1585704840424" />
+    <state x="0" y="0" width="648" height="732" key="find.popup/0.0.1366.732@0.0.1366.732" timestamp="1585881174694" />
+    <state x="345" y="161" key="run.anything.popup" timestamp="1586836935180">
+      <screen x="0" y="0" width="1360" height="738" />
+    </state>
+    <state x="345" y="161" key="run.anything.popup/0.0.1360.738@0.0.1360.738" timestamp="1586836935180" />
+    <state x="347" y="160" width="672" height="677" key="run.anything.popup/0.0.1366.732@0.0.1366.732" timestamp="1585922423918" />
+    <state x="346" y="53" width="672" height="678" key="search.everywhere.popup" timestamp="1585902642026">
       <screen x="0" y="0" width="1366" height="732" />
     </state>
-    <state x="347" y="160" key="run.anything.popup/0.0.1366.732@0.0.1366.732" timestamp="1584675209740" />
+    <state x="344" y="53" width="672" height="684" key="search.everywhere.popup/0.0.1360.738@0.0.1360.738" timestamp="1585686859771" />
+    <state x="346" y="53" width="672" height="678" key="search.everywhere.popup/0.0.1366.732@0.0.1366.732" timestamp="1585902642026" />
   </component>
 </project>

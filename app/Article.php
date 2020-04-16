@@ -6,6 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Article extends Model
 {
+    protected $fillable = [
+        'sub_category_id','title', 'marker','description','stock'
+    ];
+
     public function subCategory(){
         return $this->belongsTo(SubCategory::class);
     }
