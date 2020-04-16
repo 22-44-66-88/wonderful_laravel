@@ -14,7 +14,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware(['auth']);
     }
 
     /**
@@ -26,19 +26,20 @@ class HomeController extends Controller
     {
 //        $request->user()->authorizeRole('adminstrador');
         $user = Auth::user();
+        // dd(session('auth'));
 //        return view('home');
         if ($request->user()->authorizeRole(['administrador'])) {
             return view('homeAdmin',compact('user'));
         }
         if ($request->user()->authorizeRole(['colaborador'])) {
-            return view('home',compact('user'));
+            return view('homeCollaborator',compact('user'));
         }
         if ($request->user()->authorizeRole(['verificador'])) {
-            return view('home',compact('user'));
+            return view('homeChecker',compact('user'));
         }
 
-        if ($request->user()->authorizeRole(['client'])) {
-            return view('home',compact('user'));
+        if ($request->user()->authorizeRole(['cliente'])) {
+            return view('homeClient',compact('user'));
         }
     }
 }

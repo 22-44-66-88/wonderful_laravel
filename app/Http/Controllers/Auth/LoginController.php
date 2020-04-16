@@ -25,7 +25,7 @@ class LoginController extends Controller
     |
     */
 
-//    use AuthenticatesUsers;
+    // use AuthenticatesUsers;
 
     /**
      * Where to redirect users after login.
@@ -44,7 +44,7 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
-//    RUTAS DEL LOGUIN WONDERFUL   ----------------------------------> Wonderful <---------------------------------
+////    RUTAS DEL LOGUIN WONDERFUL y validaciones   ----------------------------------> Wonderful <---------------------------------
 
     use RedirectsUsers, ThrottlesLogins;
 
@@ -68,10 +68,7 @@ class LoginController extends Controller
      */
     public function login(Request $request)
     {
-//        dd($request);
         $this->validateLogin($request);
-
-//        return json_encode($request);
 
         // If the class is using the ThrottlesLogins trait, we can automatically throttle
         // the login attempts for this application. We'll key this by the username and
@@ -132,7 +129,13 @@ class LoginController extends Controller
      */
     protected function credentials(Request $request)
     {
-        return $request->only($this->username(), 'password');
+        // return $request->only($this->username(), 'password');
+        return [
+            'user'=>$request->{$this->username()},
+            'password'=> $request->password,
+            'active' => 1
+        ];
+
     }
 
     /**
@@ -152,8 +155,8 @@ class LoginController extends Controller
         }
 
         return $request->wantsJson()
-            ? new Response('', 204)
-            : redirect()->intended($this->redirectPath());
+                    ? new Response('', 204)
+                    : redirect()->intended($this->redirectPath());
     }
 
     /**
@@ -190,7 +193,7 @@ class LoginController extends Controller
      */
     public function username()
     {
-        return 'email';
+        return 'user';
     }
 
     /**

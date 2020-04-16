@@ -43,8 +43,8 @@
             <form method="POST" action="{{ route('login') }}">
                 @csrf
                 <div class="input-group mb-3">
-                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" placeholder="Email" required autocomplete="email" autofocus>
-                    @error('email')
+                    <input id="email" type="text" class="form-control @error('user') is-invalid @enderror" name="user" value="{{ old('user') }}" placeholder="User" required autocomplete="user" autofocus>
+                    @error('user')
                     <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
                 </span>
@@ -137,6 +137,5 @@
 <script src="{{asset("/admin-lte/plugins/bootstrap/js/bootstrap.bundle.min.js")}}"></script>
 <!-- AdminLTE App -->
 <script src="{{asset("/admin-lte/dist/js/adminlte.min.js")}}"></script>
-
 </body>
 </html>

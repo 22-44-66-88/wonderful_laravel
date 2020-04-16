@@ -46,6 +46,12 @@ return [
             'provider' => 'users',
             'hash' => false,
         ],
+
+        // dev wonderful
+        'clients' => [
+            'driver' => 'session',
+            'provider' => 'clients',
+        ],
     ],
 
     /*
@@ -74,6 +80,10 @@ return [
         // 'users' => [
         //     'driver' => 'database',
         //     'table' => 'users',
+        // ],
+        // 'clients' => [
+        //     'driver' => 'eloquent',
+        //     'table' => App\Client::class,
         // ],
     ],
 
@@ -112,6 +122,7 @@ return [
     |
     */
 
-    'password_timeout' => 10800,
+    // 'password_timeout' => 10800,
+    'password_timeout' => 10,
 
 ];

@@ -89,7 +89,7 @@ class OrderDetailController extends Controller
     }
 
     public function detalleDeOrdenesPorCliente(Request $request, Client $clients){
-        if ($request->user()->authorizeRole(['administrador'])) {
+        if ($request->user()->authorizeRole(['cliente','administrador'])) {
 //            $users =  DB::table('users')->select('*')->get();
             $clients = DB::select("
                 select c.id as id,
@@ -99,7 +99,7 @@ class OrderDetailController extends Controller
                         when 'M' then 'Masculino'
                        END as genero,
                        concat_ws(' ',c.last_name,c.mother_last_name,c.first_name,c.second_name) as cliente,
-                       c.user as user,
+                       c.email as user,
                        c.ci as ci ,
                        CASE c.active
                           when 1 then 'activo'

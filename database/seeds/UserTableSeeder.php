@@ -2,7 +2,6 @@
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Hash;
 
 class UserTableSeeder extends Seeder
 {
@@ -21,8 +20,10 @@ class UserTableSeeder extends Seeder
             'last_name' => 'Mamani',
             'mother_last_name' => 'Calle',
             'gender' => 'F',
-            'email' => 'sara'.'@gmail.com',
-            'password' => bcrypt('12345678'),
+            'phone_number' => 76891219,
+            'birthday' => date("Y-m-d H:i:s"),
+            'user' => 'saracalle3553534',
+            'password' => bcrypt('3553534'),
             'active' => 1,
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s"),
@@ -36,7 +37,9 @@ class UserTableSeeder extends Seeder
             'last_name' => 'Nanavarro',
             'mother_last_name' => 'Portuguez',
             'gender' => 'M',
-            'email' => 'raul'.'@gmail.com',
+            'phone_number' => 76891219,
+            'birthday' => date("Y-m-d H:i:s"),
+            'user' => 'raul'.'@gmail.com',
             'password' => bcrypt('12345678'),
             'active' => 1,
             'created_at' => date("Y-m-d H:i:s"),
@@ -51,14 +54,16 @@ class UserTableSeeder extends Seeder
             'last_name' => 'Gomez',
             'mother_last_name' => 'Perales',
             'gender' => 'M',
-            'email' => 'julio'.'@gmail.com',
+            'phone_number' => 76891219,
+            'birthday' => date("Y-m-d H:i:s"),
+            'user' => 'julio'.'@gmail.com',
             'password' => bcrypt('12345678'),
             'active' => 1,
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s"),
         ]);
 
-//        user 3
+//        user 4
         DB::table('users')->insert([
             'ci' => '3553534',
             'first_name' => 'Pedro',
@@ -66,11 +71,48 @@ class UserTableSeeder extends Seeder
             'last_name' => 'Martinez',
             'mother_last_name' => 'Perez',
             'gender' => 'M',
-            'email' => 'pedro'.'@gmail.com',
+            'phone_number' => 76891219,
+            'birthday' => date("Y-m-d H:i:s"),
+            'user' => 'pedro'.'@gmail.com',
             'password' => bcrypt('12345678'),
             'active' => 1,
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s"),
         ]);
+
+//        user 5
+        DB::table('users')->insert([
+            'ci' => '3553534',
+            'first_name' => 'Josh',
+            'second_name' => 'Josh',
+            'last_name' => 'Gomez',
+            'mother_last_name' => 'Perez',
+            'gender' => 'M',
+            'phone_number' => 76891219,
+            'birthday' => date("Y-m-d H:i:s"),
+            'user' => 'joshperez3553534',
+            'password' => bcrypt('3553534'),
+            'active' => 1,
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
+        ]);
+
+//        user 6
+        DB::table('users')->insert([
+            'ci' => '3553534',
+            'first_name' => 'Drake',
+            'second_name' => 'Drake',
+            'last_name' => 'Perales',
+            'mother_last_name' => 'Martinez',
+            'gender' => 'M',
+            'phone_number' => 76891219,
+            'birthday' => date("Y-m-d H:i:s"),
+            'user' => 'drakemartinez3553534',
+            'password' => bcrypt('3553534'),
+            'active' => 0,
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
+        ]);
+
     }
 }

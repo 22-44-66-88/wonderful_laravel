@@ -5,13 +5,27 @@ namespace App\Http\Controllers;
 use App\Client;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
-class ClientController extends Controller
+class ClientController extends controller
 {
+
+    
+    use AuthenticatesUsers;
+
+    // protected $loginView = 'clients.view';
+    protected $guard = 'clients';
+
+    // function __construct()
+    // { 
+    //     $this->middleware('auth:clients', ['only' => ['secret']]);
+    // }
+
+
     /**
-     * Display a listing of the resource.
+     * display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \illuminate\http\response
      */
     public function index()
     {
@@ -19,9 +33,9 @@ class ClientController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \illuminate\http\response
      */
     public function create()
     {
@@ -29,67 +43,67 @@ class ClientController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param  \illuminate\http\request  $request
+     * @return \illuminate\http\response
      */
-    public function store(Request $request)
+    public function store(request $request)
     {
         //
     }
 
     /**
-     * Display the specified resource.
+     * display the specified resource.
      *
-     * @param  \App\Client  $client
-     * @return \Illuminate\Http\Response
+     * @param  \app\client  $client
+     * @return \illuminate\http\response
      */
-    public function show(Client $client)
+    public function show(client $client)
     {
         //
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * show the form for editing the specified resource.
      *
-     * @param  \App\Client  $client
-     * @return \Illuminate\Http\Response
+     * @param  \app\client  $client
+     * @return \illuminate\http\response
      */
-    public function edit(Client $client)
+    public function edit(client $client)
     {
         //
     }
 
     /**
-     * Update the specified resource in storage.
+     * update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Client  $client
-     * @return \Illuminate\Http\Response
+     * @param  \illuminate\http\request  $request
+     * @param  \app\client  $client
+     * @return \illuminate\http\response
      */
-    public function update(Request $request, Client $client)
+    public function update(request $request, client $client)
     {
         //
     }
 
     /**
-     * Remove the specified resource from storage.
+     * remove the specified resource from storage.
      *
-     * @param  \App\Client  $client
-     * @return \Illuminate\Http\Response
+     * @param  \app\client  $client
+     * @return \illuminate\http\response
      */
-    public function destroy(Client $client)
+    public function destroy(client $client)
     {
         //
     }
 
-    public function cantidadDeProductosPorCliente_2( Request $request, Client $clients)
+    public function cantidaddeproductosporcliente_2( request $request, client $clients)
     {
-        if ($request->user()->authorizeRole(['administrador'])) {
-            $clients = DB::select(
+        if ($request->user()->authorizerole(['administrador'])) {
+            $clients = db::select(
                 "select concat_ws(' ',c.last_name,c.mother_last_name,c.first_name,c.second_name) as cliente,
-                 count(do.id) as cantidadProducto, year(o.created_at) as anio
+                 count(do.id) as cantidadproducto, year(o.created_at) as anio
             from categories d join sub_categories sd on d.id = sd.category_id
                  join articles a on sd.id = a.sub_category_id
                  join order_details do on a.id = do.article_id
@@ -101,10 +115,10 @@ class ClientController extends Controller
             -- where eo.id = 5
             -- and year(o.created_at) = 2014
             group by anio, cliente
-            order by cantidadProducto desc;"
+            order by cantidadproducto desc;"
             );
 //        dd($clients);
-            return view('clients.cantidadDeProductosPorCliente_2',compact('clients'));
+            return view('clients.cantidaddeproductosporcliente_2',compact('clients'));
         } else {
             abort(403, 'you do not authorized for this web site');
         }

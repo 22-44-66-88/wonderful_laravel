@@ -14,8 +14,21 @@
     <link rel="stylesheet" href="{{asset("/admin-lte/plugins/fontawesome-free/css/all.min.css")}}">
     <!-- IonIcons -->
     <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- daterange picker -->
+    <link rel="stylesheet" href="{{asset("/admin-lte/plugins/daterangepicker/daterangepicker.css")}}">
+    <!-- iCheck for checkboxes and radio inputs -->
+    <link rel="stylesheet" href="{{asset("/admin-lte/plugins/icheck-bootstrap/icheck-bootstrap.min.css")}}">
+    <!-- Bootstrap Color Picker -->
+    <link rel="stylesheet" href="{{asset("/admin-lte/plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css")}}">
+    <!-- Tempusdominus Bbootstrap 4 -->
+    <link rel="stylesheet" href="{{asset("/admin-lte/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css")}}">
+    <!-- Select2 -->
+    <link rel="stylesheet" href="{{asset("/admin-lte/plugins/select2/css/select2.min.css")}}">
+    <link rel="stylesheet" href="{{asset("/admin-lte/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css")}}">
+    <!-- Bootstrap4 Duallistbox -->
+    <link rel="stylesheet" href="{{asset("/admin-lte/plugins/bootstrap4-duallistbox/bootstrap-duallistbox.min.css")}}">
     <!-- SweetAlert2 -->
-    <link rel="stylesheet" href="{{asset("/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css")}}">
+    <link rel="stylesheet" href="{{asset("/admin-lte/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css")}}">
     <!-- Toastr -->
     <link rel="stylesheet" href="{{asset("/admin-lte/plugins/toastr/toastr.min.css")}}">
     <!-- DataTables -->
@@ -48,7 +61,7 @@
                 <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
             </li>
             <li class="nav-item d-none d-sm-inline-block">
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <a class="navbar-brand" href="{{ url('/home') }}">
                     {{'Inicio'}}
                 </a>
             </li>
@@ -71,92 +84,6 @@
 
         <!-- Right navbar links -->
         <ul class="navbar-nav ml-auto">
-            <!-- Messages Dropdown Menu -->
-            <li class="nav-item dropdown">
-                <a class="nav-link" data-toggle="dropdown" href="#">
-                    <i class="far fa-comments"></i>
-                    <span class="badge badge-danger navbar-badge">3</span>
-                </a>
-                <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                    <a href="#" class="dropdown-item">
-                        <!-- Message Start -->
-                        <div class="media">
-                            <img src="{{asset("/admin-lte/dist/img/user1-128x128.jpg")}}" alt="User Avatar" class="img-size-50 mr-3 img-circle">
-                            <div class="media-body">
-                                <h3 class="dropdown-item-title">
-                                    Brad Diesel
-                                    <span class="float-right text-sm text-danger"><i class="fas fa-star"></i></span>
-                                </h3>
-                                <p class="text-sm">Call me whenever you can...</p>
-                                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
-                            </div>
-                        </div>
-                        <!-- Message End -->
-                    </a>
-                    <div class="dropdown-divider"></div>
-                    <a href="#" class="dropdown-item">
-                        <!-- Message Start -->
-                        <div class="media">
-                            <img src="{{asset("/admin-lte/dist/img/user8-128x128.jpg")}}" alt="User Avatar" class="img-size-50 img-circle mr-3">
-                            <div class="media-body">
-                                <h3 class="dropdown-item-title">
-                                    John Pierce
-                                    <span class="float-right text-sm text-muted"><i class="fas fa-star"></i></span>
-                                </h3>
-                                <p class="text-sm">I got your message bro</p>
-                                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
-                            </div>
-                        </div>
-                        <!-- Message End -->
-                    </a>
-                    <div class="dropdown-divider"></div>
-                    <a href="#" class="dropdown-item">
-                        <!-- Message Start -->
-                        <div class="media">
-                            <img src="{{asset("/admin-lte/dist/img/user3-128x128.jpg")}}" alt="User Avatar" class="img-size-50 img-circle mr-3">
-                            <div class="media-body">
-                                <h3 class="dropdown-item-title">
-                                    Nora Silvester
-                                    <span class="float-right text-sm text-warning"><i class="fas fa-star"></i></span>
-                                </h3>
-                                <p class="text-sm">The subject goes here</p>
-                                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
-                            </div>
-                        </div>
-                        <!-- Message End -->
-                    </a>
-                    <div class="dropdown-divider"></div>
-                    <a href="#" class="dropdown-item dropdown-footer">See All Messages</a>
-                </div>
-            </li>
-
-            <!-- Notifications Dropdown Menu -->
-            <li class="nav-item dropdown">
-                <a class="nav-link" data-toggle="dropdown" href="#">
-                    <i class="far fa-bell"></i>
-                    <span class="badge badge-warning navbar-badge">15</span>
-                </a>
-                <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                    <span class="dropdown-item dropdown-header">15 Notifications</span>
-                    <div class="dropdown-divider"></div>
-                    <a href="#" class="dropdown-item">
-                        <i class="fas fa-envelope mr-2"></i> 4 new messages
-                        <span class="float-right text-muted text-sm">3 mins</span>
-                    </a>
-                    <div class="dropdown-divider"></div>
-                    <a href="#" class="dropdown-item">
-                        <i class="fas fa-users mr-2"></i> 8 friend requests
-                        <span class="float-right text-muted text-sm">12 hours</span>
-                    </a>
-                    <div class="dropdown-divider"></div>
-                    <a href="#" class="dropdown-item">
-                        <i class="fas fa-file mr-2"></i> 3 new reports
-                        <span class="float-right text-muted text-sm">2 days</span>
-                    </a>
-                    <div class="dropdown-divider"></div>
-                    <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
-                </div>
-            </li>
             <!-- Authentication Links -->
             @guest
                 <li class="nav-item">
@@ -171,14 +98,14 @@
                 {{--               logout o perfil--}}
                 <li class="nav-item dropdown user-menu">
                     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                        <img src="{{asset("/admin-lte/dist/img/user2-160x160.jpg")}}" class="user-image img-circle elevation-2" alt="User Image">
+                        <img src="{{asset("/admin-lte/dist/img/user3-128x128.jpg")}}" class="user-image img-circle elevation-2" alt="User Image">
                         <span class="d-none d-md-inline">{{ Auth::user()->first_name }} {{ Auth::user()->last_name }}</span>
                     </a>
 
                     <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                         <!-- User image -->
                         <li class="user-header bg-dark">
-                            <img src="{{asset("/admin-lte/dist/img/user2-160x160.jpg")}}" class="img-circle elevation-2" alt="User Image">
+                            <img src="{{asset("/admin-lte/dist/img/user3-128x128.jpg")}}" class="img-circle elevation-2" alt="User Image">
                             <p>
                                 {{ Auth::user()->first_name }} {{ Auth::user()->last_name }} {{ Auth::user()->mother_last_name }}
                                 <br> Adminstrador
@@ -225,14 +152,14 @@
             <div class="mt-2 pb-4 mb-2 d-flex">
                 &ensp;
                 <div class="image">
-                    <img src="{{asset("/admin-lte/dist/img/user2-160x160.jpg")}}" class="img-circle elevation-2" alt="User Image" style="width: 43px; height: 43px;">
+                    <img src="{{asset("/admin-lte/dist/img/user3-128x128.jpg")}}" class="img-circle elevation-2" alt="User Image" style="width: 43px; height: 43px;">
                 </div>
                 &ensp;&ensp;
                 <div class="info">
                     <a href="#" class="d-block">
                         {{ Auth::user()->first_name }} {{ Auth::user()->last_name }} {{ Auth::user()->mother_last_name }}
                     </a>
-                    <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+                    <a href="#"><i class="fa fa-circle text-success"></i> Online <br>{{session(['auth'])}} </a>
                 </div>
             </div>
             <!-- Sidebar Menu -->
@@ -300,7 +227,8 @@
 
                     <li class="nav-item has-treeview">
                         <a href="#" class="nav-link">
-                            <i class="nav-icon fas fa-edit"></i>
+                            {{-- <i class="fa fa-area-chart"></i> --}}
+                            <i class="nav-icon fas fa-edit" aria-hidden="true"></i>
                             <p>
                                 Reportes Estadisticos
                                 <i class="fas fa-angle-left right"></i>
@@ -351,6 +279,17 @@
                             </li>
                         </ul>
                     </li>
+                    {{-- GESTIOANR  ===== >>>> CRUDs --}}
+                    <li class="nav-header">ADMINISTRAR</li>
+                    <li class="nav-item">
+                        <a href="{{ route('articles.index') }}" class="nav-link">
+                        <i class="nav-icon fas fa-tv"></i>
+                        <p>
+                            Articulos
+                            {{-- <span class="badge badge-info right">2</span> --}}
+                        </p>
+                        </a>
+                    </li>
                 </ul>
             </nav>
             <!-- /.sidebar-menu -->
@@ -386,6 +325,21 @@
 <script src="{{asset("/admin-lte/plugins/jquery/jquery.min.js")}}"></script>
 <!-- Bootstrap -->
 <script src="{{asset("/admin-lte/plugins/bootstrap/js/bootstrap.bundle.min.js")}}"></script>
+<!-- Select2 -->
+<script src="{{asset("/admin-lte/plugins/select2/js/select2.full.min.js")}}"></script>
+<!-- Bootstrap4 Duallistbox -->
+<script src="{{asset("/admin-lte/plugins/bootstrap4-duallistbox/jquery.bootstrap-duallistbox.min.js")}}"></script>
+<!-- InputMask -->
+<script src="{{asset("/admin-lte/plugins/moment/moment.min.js")}}"></script>
+<script src="{{asset("/admin-lte/plugins/inputmask/min/jquery.inputmask.bundle.min.js")}}"></script>
+<!-- date-range-picker -->
+<script src="{{asset("/admin-lte/plugins/daterangepicker/daterangepicker.js")}}"></script>
+<!-- bootstrap color picker -->
+<script src="{{asset("/admin-lte/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js")}}"></script>
+<!-- Tempusdominus Bootstrap 4 -->
+<script src="{{asset("/admin-lte/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js")}}"></script>
+<!-- Bootstrap Switch -->
+<script src="{{asset("/admin-lte/plugins/bootstrap-switch/js/bootstrap-switch.min.js")}}"></script>
 <!-- SweetAlert2 -->
 <script src="{{asset("/admin-lte/plugins/sweetalert2/sweetalert2.min.js")}}"></script>
 <!-- Toastr -->
@@ -571,7 +525,77 @@
     });
 
 </script>
+<script>
+    $(function () {
+      //Initialize Select2 Elements
+      $('.select2').select2()
+  
+      //Initialize Select2 Elements
+      $('.select2bs4').select2({
+        theme: 'bootstrap4'
+      })
+  
+      //Datemask dd/mm/yyyy
+      $('#datemask').inputmask('dd/mm/yyyy', { 'placeholder': 'dd/mm/yyyy' })
+      //Datemask2 mm/dd/yyyy
+      $('#datemask2').inputmask('mm/dd/yyyy', { 'placeholder': 'mm/dd/yyyy' })
+      //Money Euro
+      $('[data-mask]').inputmask()
+  
+      //Date range picker
+      $('#reservation').daterangepicker()
+      //Date range picker with time picker
+      $('#reservationtime').daterangepicker({
+        timePicker: true,
+        timePickerIncrement: 30,
+        locale: {
+          format: 'MM/DD/YYYY hh:mm A'
+        }
+      })
+      //Date range as a button
+      $('#daterange-btn').daterangepicker(
+        {
+          ranges   : {
+            'Today'       : [moment(), moment()],
+            'Yesterday'   : [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+            'Last 7 Days' : [moment().subtract(6, 'days'), moment()],
+            'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+            'This Month'  : [moment().startOf('month'), moment().endOf('month')],
+            'Last Month'  : [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+          },
+          startDate: moment().subtract(29, 'days'),
+          endDate  : moment()
+        },
+        function (start, end) {
+          $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'))
+        }
+      )
+  
+      //Timepicker
+      $('#timepicker').datetimepicker({
+        format: 'LT'
+      })
+      
+      //Bootstrap Duallistbox
+      $('.duallistbox').bootstrapDualListbox()
+  
+      //Colorpicker
+      $('.my-colorpicker1').colorpicker()
+      //color picker with addon
+      $('.my-colorpicker2').colorpicker()
+  
+      $('.my-colorpicker2').on('colorpickerChange', function(event) {
+        $('.my-colorpicker2 .fa-square').css('color', event.color.toString());
+      });
+  
+      $("input[data-bootstrap-switch]").each(function(){
+        $(this).bootstrapSwitch('state', $(this).prop('checked'));
+      });
+  
+    })
+  </script>
+
 @yield('scriptsBarChart')
-@yield('scriptReadMore');
+@yield('scriptReadMore')
 </body>
 </html>
